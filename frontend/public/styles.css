@@ -1,0 +1,67 @@
+header img {
+    width: 50px;
+    align-content:center;
+}
+
+/* wrapper + viewport */
+.carousel-wrapper{
+  position:relative;
+  width: min(90vw, 900px);
+  max-width:900px;
+}
+.viewport{
+  overflow:hidden;
+  border-radius:12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+/* track */
+.carousel-container{
+  display:flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+/* images : chaque image prend 100% du viewport */
+.carousel-container img{
+  width:100%;
+  flex: 0 0 100%;
+  object-fit:cover;
+  display:flex;
+}
+
+/* boutons */
+.nav-btn{
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.85);
+  border: none;
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  transition: transform .15s ease, background .15s ease;
+  z-index: 5;
+}
+.nav-btn:hover{ transform: translateY(-50%) scale(1.05); background: white; }
+.nav-btn:active{ transform: translateY(-50%) scale(.98); }
+
+#left-btn{ left: 12px; }
+#right-btn{ right: 12px; }
+
+/* accessibilité focus */
+.nav-btn:focus{
+  outline: 3px solid rgba(30,144,255,0.25);
+  outline-offset: 2px;
+}
+
+/* responsive : boutons plus petits sur mobile */
+@media (max-width:480px){
+  .nav-btn{ width:40px; height:40px; }
+  .carousel-container img{ height:45vh; }
+}
