@@ -1,67 +1,314 @@
+body {
+  background-color: #E9E6E0;
+}
+
 header img {
     width: 50px;
     align-content:center;
+    vertical-align:text-bottom;
 }
 
-/* wrapper + viewport */
-.carousel-wrapper{
-  position:relative;
-  width: min(90vw, 900px);
-  max-width:900px;
-}
-.viewport{
-  overflow:hidden;
-  border-radius:12px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+
+
+/* Le carousel prend toute la largeur */
+.carousel-section {
+  position: relative;
+  width: 100vw;
+  height: 80vh; /* adapte selon ton goût */
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
-/* track */
-.carousel-container{
-  display:flex;
-  transition: transform 0.5s ease;
-  will-change: transform;
+/* Conteneur principal */
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
-/* images : chaque image prend 100% du viewport */
-.carousel-container img{
-  width:100%;
-  flex: 0 0 100%;
-  object-fit:cover;
-  display:flex;
+/* Conteneur d'images */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
-/* boutons */
-.nav-btn{
-  position:absolute;
-  top:50%;
+/* Images */
+.carousel-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Image visible */
+.carousel-container img.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Boutons gauche/droite */
+.nav-btn {
+  position: absolute;
+  top: 50%;
   transform: translateY(-50%);
-  background: rgba(255,255,255,0.85);
+  background-color: rgba(0, 0, 0, 0.4);
   border: none;
-  width:48px;
-  height:48px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-  transition: transform .15s ease, background .15s ease;
-  z-index: 5;
-}
-.nav-btn:hover{ transform: translateY(-50%) scale(1.05); background: white; }
-.nav-btn:active{ transform: translateY(-50%) scale(.98); }
-
-#left-btn{ left: 12px; }
-#right-btn{ right: 12px; }
-
-/* accessibilité focus */
-.nav-btn:focus{
-  outline: 3px solid rgba(30,144,255,0.25);
-  outline-offset: 2px;
+  color: white;
+  font-size: 2rem;
+  padding: 0.6rem 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 3;
+  transition: background 0.3s ease;
 }
 
-/* responsive : boutons plus petits sur mobile */
-@media (max-width:480px){
-  .nav-btn{ width:40px; height:40px; }
-  .carousel-container img{ height:45vh; }
+.nav-btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#left-btn {
+  left: 1.5%;
+}
+
+#right-btn {
+  right: 1.5%;
+}
+
+/* Dots */
+.dots-container {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  z-index: 4;
+}
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.dot.active {
+  background-color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .carousel-section {
+    height: 60vh;
+  }
+
+  .nav-btn {
+    font-size: 1.5rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* === BLOC DE RECHERCHE AVANCÉ === */
+
+.search-box {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 1.2rem;
+  padding: 2rem;
+  z-index: 6;
+  color: white;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-fields {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.search-field {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-field label {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.search-field select,
+.search-field input {
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #000;
+}
+
+.date-range {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.date-range input {
+  flex: 1;
+}
+
+/* --- QUI : Sélecteur déroulant --- */
+.guest-selector {
+  position: relative;
+  align-self:center ;
+}
+
+.guest-selector input {
+  cursor: pointer;
+}
+
+.guest-popup {
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 250px;
+  background: rgba(255, 255, 255, 0.95);
+  color: black;
+  border-radius: 0.8rem;
+  padding: 1rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  z-index: 10;
+}
+
+.guest-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.counter button {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: #93cebd;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+}
+
+.counter button:hover {
+  background: #93cebd;
+}
+
+.close-popup {
+  display: block;
+  width: 100%;
+  border: none;
+  background: #93cebd;
+  color: black;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.close-popup:hover {
+  background: #93cebd;
+}
+
+/* --- Bouton rechercher --- */
+.search-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.search-btn {
+  background-color: #93cebd;
+  color: #000;
+  border: none;
+  border-radius: 1rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0.8rem 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+  background-color: #93cebd;
+  transform: scale(1.05);
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .search-fields {
+    flex-direction: column;
+  }
+  .search-box {
+    width: 95%;
+    padding: 1.2rem;
+    bottom: 4%;
+  }
+  .guest-popup {
+    width: 100%;
+  }
+}
+
+/* offre du moment */
+
+.offre {
+  background: #f9f9f9;
+}
+
+.offre .card {
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.offre .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  background: #93cebd;
+  color: black;
+  font-weight: bold;
 }

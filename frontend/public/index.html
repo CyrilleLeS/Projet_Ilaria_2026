@@ -12,7 +12,6 @@
 
 </head>
 <body>
-
     <!-- Header -->
      <header>
         <div>
@@ -21,19 +20,18 @@
     <tr class="table-primary">
       <th scope="row"></th>
       <td><img src="images/logo.png"></td>
-      <td><h1>Reservé Votre hôtel !</h1></td>
+      <td><h1>Reservez Votre hôtel !</h1></td>
       <td>dsfdsdffsdfsd </td>
       <td>      
         <form class="d-flex">
-        <input class="form-control me-sm-2" type="search" placeholder="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        <input class="form-control me-sm-2" type="search" placeholder="Trouvez votre bonheur">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Recherche</button>
       </form>
     </td>
     </tr>
   </tbody>
 </table>
         </div>
-
      </header>
 
      <!--Barre de navigation-->
@@ -45,57 +43,203 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarColor01">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Vol
-            <span class="visually-hidden">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Vol+Hôtel</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Location</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pages</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
-        </li>
-      </ul>
-
-    </div>
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Vol
+              <span class="visually-hidden">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Vol+Hôtel</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Location</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
   </div>
 </nav></section>
 
      <!--Carrousel et cadre de recherche-->
-     <section>
-  <div class="carousel-wrapper">
-    <button id="left-btn" class="nav-btn" type="button" aria-label="Image précédente">
-      <!-- icône svg -->
-      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </button>
 
-    <div class="viewport">
-      <div class="carousel-container">
-        <img src="images/hotel1.jpg" alt="hotel 1">
-        <img src="images/hotel2.jpg" alt="hotel 2">
-        <img src="images/hotel3.jpg" alt="hotel 3">
+<section class="carousel-section">
+  <div class="carousel">
+    <button id="left-btn" class="nav-btn">❮</button>
+
+    <div class="carousel-container">
+      <img src="images/hotel1.jpg" alt="Image 1" class="active">
+      <img src="images/hotel2.jpg" alt="Image 2">
+      <img src="images/hotel3.jpg" alt="Image 3">
+    </div>
+
+    <button id="right-btn" class="nav-btn">❯</button>
+
+    <div class="dots-container">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+
+  <!-- Bloc de recherche avancée -->
+
+  <div class="search-box">
+    <form class="search-form">
+      <div class="search-fields">
+
+        <!-- Quoi -->
+
+        <div class="search-field">
+          <label for="service">Quoi ?</label>
+          <select id="service" name="service">
+            <option value="hotel">Hôtel</option>
+            <option value="avion">Avion</option>
+            <option value="vol-hotel">Avion + Hôtel</option>
+            <option value="voiture">Location de voiture</option>
+          </select>
+        </div>
+
+        <!-- Où -->
+
+        <div class="search-field">
+          <label for="destination">Où ?</label>
+          <input type="text" id="destination" name="destination" placeholder="Destination, ville ou hôtel...">
+        </div>
+
+        <!-- Quand -->
+
+        <div class="search-field">
+          <label for="dates">Quand ?</label>
+          <div class="date-range">
+            <input type="date" id="start-date" name="start-date">
+            <span>→</span>
+            <input type="date" id="end-date" name="end-date">
+          </div>
+        </div>
+
+        <!-- Qui -->
+
+        <div class="search-field">
+          <label>Qui ?</label>
+          <div class="guest-selector">
+            <input type="text" id="guests-summary" readonly value="1 chambre, 2 adultes, 0 enfant">
+            <div class="guest-popup">
+              <div class="guest-row">
+                <span>Chambres</span>
+                <div class="counter">
+                  <button type="button" class="minus">-</button>
+                  <span class="count" data-type="rooms">1</span>
+                  <button type="button" class="plus">+</button>
+                </div>
+              </div>
+              <div class="guest-row">
+                <span>Adultes</span>
+                <div class="counter">
+                  <button type="button" class="minus">-</button>
+                  <span class="count" data-type="adults">2</span>
+                  <button type="button" class="plus">+</button>
+                </div>
+              </div>
+              <div class="guest-row">
+                <span>Enfants</span>
+                <div class="counter">
+                  <button type="button" class="minus">-</button>
+                  <span class="count" data-type="children">0</span>
+                  <button type="button" class="plus">+</button>
+                </div>
+              </div>
+            <button type="button" class="close-popup">OK</button>
+          </div>
+        </div>
       </div>
     </div>
 
-    <button id="right-btn" class="nav-btn" type="button" aria-label="Image suivante">
-      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </button>
-  </div>
-     </section>
+    <!-- Bouton centré -->
+
+    <div class="search-button-wrapper">
+      <button type="submit" class="search-btn">Rechercher</button>
+    </div>
+  </form>
+</div>
+</section>
 
      <!--Dernières offres-->
-     <section>
 
-     </section>
+<section class="offre py-5">
+  <div class="container text-center">
+    <div class="row align-items-stretch g-4">
+      <h2>EXPLOREZ NOS DERNIERES OFFRES</h2>
+
+      <!-- Carte 1 -->
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <img src="images/vacances1.jpg" class="d-block user-select-none" width="100%" height="200" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180">
+            <rect width="100%" height="100%" fill="#868e96"></rect>
+          <div class="card-body">
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the bulk of the card's content.
+            </p>
+            <button type="button" class="btn btn-primary">Primary</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte 2 -->
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <img src="images/vacances2.jpg" class="d-block user-select-none" width="100%" height="200" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180">
+            <rect width="100%" height="100%" fill="#868e96"></rect>
+          <div class="card-body">
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the bulk of the card's content.
+            </p>
+            <button type="button" class="btn btn-primary">Primary</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte 3 -->
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <img src="images/vacances3.jpg" class="d-block user-select-none" width="100%" height="200" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180">
+            <rect width="100%" height="100%" fill="#868e96"></rect>
+          <div class="card-body">
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the bulk of the card's content.
+            </p>
+            <button type="button" class="btn btn-primary">Primary</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte 4 -->
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <img src="images/vacances4.jpg" class="d-block user-select-none" width="100%" height="200" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180">
+            <rect width="100%" height="100%" fill="#868e96"></rect>
+          <div class="card-body">
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the bulk of the card's content.
+            </p>
+            <button type="button" class="btn btn-primary">Primary</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
      <!--Top destinations-->
      <section>
 
