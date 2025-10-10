@@ -2,256 +2,169 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="styles.css">
 
     <title>Accueil</title>
-
 </head>
 <body>
-    <!-- Header -->
-     <header>
-        <div>
-<table class="table table-hover">
-  <thead>
-    <tr class="table-primary">
-      <th scope="row"></th>
-      <td><img src="images/logo.png"></td>
-      <td><h1>Reservez Votre hôtel !</h1></td>
-      <td>dsfdsdffsdfsd </td>
-      <td>      
-        <form class="d-flex">
-        <input class="form-control me-sm-2" type="search" placeholder="Trouvez votre bonheur">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Recherche</button>
-      </form>
-    </td>
-    </tr>
-  </tbody>
-</table>
-        </div>
-     </header>
-
-     <!--Barre de navigation-->
-
-     <section>
-<nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-      <div class="collapse navbar-collapse" id="navbarColor01">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Vol
-              <span class="visually-hidden">(current)</span>
+    <header class="main-header">
+        <div class="header-content">
+            <a href="#" class="header-logo">
+                <img src="images/logo.png" alt="Logo de l'entreprise">
+                <h2>Réservez Votre Hôtel !</h2>
             </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Vol+Hôtel</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Location</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pages</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
-      </div>
-  </div>
-</nav></section>
+            <form class="header-search d-flex">
+                <input class="form-control me-sm-2" type="search" placeholder="Trouvez votre bonheur">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Recherche</button>
+            </form>
+        </div>
+    </header>
 
-     <!--Carrousel et cadre de recherche-->
+    <nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Menu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Vol <span class="visually-hidden">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Vol+Hôtel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Location</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<section class="carousel-section">
-  <div class="carousel">
-    <button id="left-btn" class="nav-btn">❮</button>
-
-    <div class="carousel-container">
-      <img src="images/hotel1.jpg" alt="Image 1" class="active">
-      <img src="images/hotel2.jpg" alt="Image 2">
-      <img src="images/hotel3.jpg" alt="Image 3">
-    </div>
-
-    <button id="right-btn" class="nav-btn">❯</button>
-
-    <div class="dots-container">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-    </div>
-  </div>
-
-  <!-- Bloc de recherche avancée -->
-
-  <div class="search-box">
-    <form class="search-form">
-      <div class="search-fields">
-
-        <!-- Quoi -->
-
-        <div class="search-field">
-          <label for="service">Quoi ?</label>
-          <select id="service" name="service">
-            <option value="hotel">Hôtel</option>
-            <option value="avion">Avion</option>
-            <option value="vol-hotel">Avion + Hôtel</option>
-            <option value="voiture">Location de voiture</option>
-          </select>
+    <section class="hero-section">
+        <div class="carousel">
+            <button id="left-btn" class="nav-btn">❮</button>
+            <div class="carousel-container">
+                <img src="images/hotel1.jpg" alt="Vue luxueuse d'un hôtel" class="active">
+                <img src="images/hotel2.jpg" alt="Piscine d'un hôtel au crépuscule">
+                <img src="images/hotel3.jpg" alt="Chambre d'hôtel moderne">
+            </div>
+            <button id="right-btn" class="nav-btn">❯</button>
+            <div class="dots-container">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
         </div>
 
-        <!-- Où -->
-
-        <div class="search-field">
-          <label for="destination">Où ?</label>
-          <input type="text" id="destination" name="destination" placeholder="Destination, ville ou hôtel...">
-        </div>
-
-        <!-- Quand -->
-
-        <div class="search-field">
-          <label for="dates">Quand ?</label>
-          <div class="date-range">
-            <input type="date" id="start-date" name="start-date">
-            <span>→</span>
-            <input type="date" id="end-date" name="end-date">
-          </div>
-        </div>
-
-        <!-- Qui -->
-
-        <div class="search-field">
-          <label>Qui ?</label>
-          <div class="guest-selector">
-            <input type="text" id="guests-summary" readonly value="1 chambre, 2 adultes, 0 enfant">
-            <div class="guest-popup">
-              <div class="guest-row">
-                <span>Chambres</span>
-                <div class="counter">
-                  <button type="button" class="minus">-</button>
-                  <span class="count" data-type="rooms">1</span>
-                  <button type="button" class="plus">+</button>
+        <div class="search-box">
+            <form class="search-form">
+                <div class="search-fields">
+                    <div class="search-field">
+                        <label for="service"style="color: white;text-shadow: 2px 2px 4px #000000;"">Quoi ?</label>
+                        <select id="service" name="service">
+                            <option value="hotel">Hôtel</option>
+                            <option value="avion">Avion</option>
+                            <option value="vol-hotel">Avion + Hôtel</option>
+                            <option value="voiture">Location de voiture</option>
+                        </select>
+                    </div>
+                    <div class="search-field">
+                        <label for="destination" style="color: white;text-shadow: 2px 2px 4px #000000;"">Où ?</label>
+                        <input type="text" id="destination" name="destination" placeholder="Destination, ville...">
+                    </div>
+                    <div class="search-field">
+                        <label for="start-date" style="color: white;text-shadow: 2px 2px 4px #000000;">Quand ?</label>
+                        <div class="date-range">
+                            <input type="date" id="start-date" name="start-date">
+                            <span>→</span>
+                            <input type="date" id="end-date" name="end-date">
+                        </div>
+                    </div>
+                    <div class="search-field">
+                        <label for="guests-summary" style="color: white;text-shadow: 2px 2px 4px #000000;">Qui ?</label>
+                        <div class="guest-selector">
+                            <input type="text" id="guests-summary" readonly value="1 chambre, 2 adultes, 0 enfant">
+                            <div class="guest-popup">
+                                <div class="guest-row">
+                                    <span>Chambres</span>
+                                    <div class="counter"><button type="button" class="minus">-</button><span class="count">1</span><button type="button" class="plus">+</button></div>
+                                </div>
+                                <div class="guest-row">
+                                    <span>Adultes</span>
+                                    <div class="counter"><button type="button" class="minus">-</button><span class="count">2</span><button type="button" class="plus">+</button></div>
+                                </div>
+                                <div class="guest-row">
+                                    <span>Enfants</span>
+                                    <div class="counter"><button type="button" class="minus">-</button><span class="count">0</span><button type="button" class="plus">+</button></div>
+                                </div>
+                                <button type="button" class="close-popup">OK</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="guest-row">
-                <span>Adultes</span>
-                <div class="counter">
-                  <button type="button" class="minus">-</button>
-                  <span class="count" data-type="adults">2</span>
-                  <button type="button" class="plus">+</button>
+                <div class="search-button-wrapper">
+                    <button type="submit" class="search-btn">Rechercher</button>
                 </div>
-              </div>
-              <div class="guest-row">
-                <span>Enfants</span>
-                <div class="counter">
-                  <button type="button" class="minus">-</button>
-                  <span class="count" data-type="children">0</span>
-                  <button type="button" class="plus">+</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="offre py-5">
+        <div class="container text-center">
+            <h2>EXPLOREZ NOS DERNIÈRES OFFRES</h2>
+            <div class="row align-items-stretch g-4 mt-3">
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100 shadow-sm">
+                        <img src="images/vacances1.jpg" class="card-img-top" alt="Plage tropicale ensoleillée">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <button type="button" class="btn btn-primary">Découvrir</button>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            <button type="button" class="close-popup">OK</button>
-          </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100 shadow-sm">
+                        <img src="images/vacances2.jpg" class="card-img-top" alt="Vue sur une ville européenne historique">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <button type="button" class="btn btn-primary">Découvrir</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100 shadow-sm">
+                        <img src="images/vacances3.jpg" class="card-img-top" alt="Paysage de montagne avec un lac">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <button type="button" class="btn btn-primary">Découvrir</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100 shadow-sm">
+                        <img src="images/vacances4.jpg" class="card-img-top" alt="Aventure dans un désert">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <button type="button" class="btn btn-primary">Découvrir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-
-    <!-- Bouton centré -->
-
-    <div class="search-button-wrapper">
-      <button type="submit" class="search-btn">Rechercher</button>
-    </div>
-  </form>
-</div>
-</section>
-
-     <!--Dernières offres-->
-
-<section class="offre py-5">
-  <div class="container text-center">
-    <div class="row align-items-stretch g-4">
-      <h2>EXPLOREZ NOS DERNIERES OFFRES</h2>
-
-      <!-- Carte 1 -->
-
-      <div class="col-12 col-sm-6 col-lg-3">
-        <div class="card h-100 shadow-sm">
-          <img src="images/vacances1.jpg" class="d-block user-select-none" width="100%" height="200" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180">
-            <rect width="100%" height="100%" fill="#868e96"></rect>
-          <div class="card-body">
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the bulk of the card's content.
-            </p>
-            <button type="button" class="btn btn-primary">Primary</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Carte 2 -->
-
-      <div class="col-12 col-sm-6 col-lg-3">
-        <div class="card h-100 shadow-sm">
-          <img src="images/vacances2.jpg" class="d-block user-select-none" width="100%" height="200" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180">
-            <rect width="100%" height="100%" fill="#868e96"></rect>
-          <div class="card-body">
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the bulk of the card's content.
-            </p>
-            <button type="button" class="btn btn-primary">Primary</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Carte 3 -->
-
-      <div class="col-12 col-sm-6 col-lg-3">
-        <div class="card h-100 shadow-sm">
-          <img src="images/vacances3.jpg" class="d-block user-select-none" width="100%" height="200" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180">
-            <rect width="100%" height="100%" fill="#868e96"></rect>
-          <div class="card-body">
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the bulk of the card's content.
-            </p>
-            <button type="button" class="btn btn-primary">Primary</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Carte 4 -->
-
-      <div class="col-12 col-sm-6 col-lg-3">
-        <div class="card h-100 shadow-sm">
-          <img src="images/vacances4.jpg" class="d-block user-select-none" width="100%" height="200" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180">
-            <rect width="100%" height="100%" fill="#868e96"></rect>
-          <div class="card-body">
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the bulk of the card's content.
-            </p>
-            <button type="button" class="btn btn-primary">Primary</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-     <!--Top destinations-->
-     <section>
-
-     </section>
-     <!--Mise en avant du site-->
-     <section>
-
-     </section>
-     <!--Footer-->
-     <footer>
-
-     </footer>
-<script src="script.js"></script>
+    </section>
+    
+    <script src="script.js"></script>
 </body>
 </html>

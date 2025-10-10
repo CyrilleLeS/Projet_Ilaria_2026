@@ -1,40 +1,71 @@
+/* === GENERAL STYLES === */
+:root {
+  --accent-color: #93cebd;
+  --accent-color-hover: #7ab9a6;
+}
+
 body {
   background-color: #E9E6E0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-header img {
-    width: 50px;
-    align-content:center;
-    vertical-align:text-bottom;
+/* === HEADER === */
+.main-header {
+  background-color: #93cebd; /* Or any color you prefer */
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #dee2e6;
 }
 
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allows items to wrap on small screens */
+  gap: 1rem;
+}
 
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: #333;
+}
 
-/* Le carousel prend toute la largeur */
-.carousel-section {
-  position: relative;
-  width: 100vw;
-  height: 80vh; /* adapte selon ton goût */
-  overflow: hidden;
+.header-logo img {
+  width: 50px;
+  height: 50px;
+}
+
+.header-logo h2 {
+  font-size: 1.5rem;
   margin: 0;
-  padding: 0;
+  font-weight: 600;
 }
 
-/* Conteneur principal */
+.header-search {
+  min-width: 250px;
+}
+
+/* === HERO SECTION (Carousel + Search) === */
+.hero-section {
+  position: relative;
+  width: 100%;
+}
+
 .carousel {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 75vh; /* Adjusted height */
+  overflow: hidden;
 }
 
-/* Conteneur d'images */
 .carousel-container {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-/* Images */
 .carousel-container img {
   position: absolute;
   top: 0;
@@ -46,13 +77,10 @@ header img {
   transition: opacity 1s ease-in-out;
 }
 
-/* Image visible */
 .carousel-container img.active {
   opacity: 1;
-  z-index: 2;
 }
 
-/* Boutons gauche/droite */
 .nav-btn {
   position: absolute;
   top: 50%;
@@ -61,10 +89,10 @@ header img {
   border: none;
   color: white;
   font-size: 2rem;
-  padding: 0.6rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 50%;
   cursor: pointer;
-  z-index: 3;
+  z-index: 5;
   transition: background 0.3s ease;
 }
 
@@ -72,21 +100,15 @@ header img {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-#left-btn {
-  left: 1.5%;
-}
+#left-btn { left: 1.5rem; }
+#right-btn { right: 1.5rem; }
 
-#right-btn {
-  right: 1.5%;
-}
-
-/* Dots */
 .dots-container {
   position: absolute;
   bottom: 20px;
   width: 100%;
   text-align: center;
-  z-index: 4;
+  z-index: 5;
 }
 
 .dot {
@@ -104,37 +126,21 @@ header img {
   background-color: white;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .carousel-section {
-    height: 60vh;
-  }
-
-  .nav-btn {
-    font-size: 1.5rem;
-    padding: 0.4rem 0.8rem;
-  }
-
-  .dot {
-    width: 10px;
-    height: 10px;
-  }
-}
-
-/* === BLOC DE RECHERCHE AVANCÉ === */
-
+/* === SEARCH BOX === */
 .search-box {
   position: absolute;
-  bottom: 10%;
+  bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
-  width: 85%;
+  width: 80%;
+  max-width: 1100px;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
   border-radius: 1.2rem;
   padding: 2rem;
   z-index: 6;
   color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .search-form {
@@ -144,16 +150,13 @@ header img {
 }
 
 .search-fields {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Creates 4 equal columns */
   gap: 1.5rem;
   width: 100%;
-  flex-wrap: wrap;
 }
 
 .search-field {
-  flex: 1;
-  min-width: 200px;
   display: flex;
   flex-direction: column;
 }
@@ -165,12 +168,13 @@ header img {
 
 .search-field select,
 .search-field input {
-  padding: 0.6rem;
+  padding: 0.75rem;
   border-radius: 0.5rem;
   border: none;
   font-size: 1rem;
   background-color: rgba(255, 255, 255, 0.9);
-  color: #000;
+  color: #333;
+  width: 100%;
 }
 
 .date-range {
@@ -179,14 +183,8 @@ header img {
   gap: 0.3rem;
 }
 
-.date-range input {
-  flex: 1;
-}
-
-/* --- QUI : Sélecteur déroulant --- */
 .guest-selector {
   position: relative;
-  align-self:center ;
 }
 
 .guest-selector input {
@@ -198,8 +196,8 @@ header img {
   position: absolute;
   top: 110%;
   left: 0;
-  width: 250px;
-  background: rgba(255, 255, 255, 0.95);
+  width: 280px;
+  background: white;
   color: black;
   border-radius: 0.8rem;
   padding: 1rem;
@@ -225,76 +223,66 @@ header img {
   height: 28px;
   border: none;
   border-radius: 50%;
-  background: #93cebd;
+  background: var(--accent-color);
   font-weight: bold;
   color: black;
   cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 .counter button:hover {
-  background: #93cebd;
+  background: var(--accent-color-hover);
 }
 
 .close-popup {
   display: block;
   width: 100%;
   border: none;
-  background: #93cebd;
+  background: var(--accent-color);
   color: black;
   border-radius: 0.5rem;
   padding: 0.5rem;
   cursor: pointer;
   font-weight: bold;
+  transition: background-color 0.2s;
 }
 
 .close-popup:hover {
-  background: #93cebd;
+  background: var(--accent-color-hover);
 }
 
-/* --- Bouton rechercher --- */
 .search-button-wrapper {
-  display: flex;
-  justify-content: center;
   margin-top: 1.5rem;
   width: 100%;
+  text-align: center;
 }
 
 .search-btn {
-  background-color: #93cebd;
+  background-color: var(--accent-color);
   color: #000;
   border: none;
   border-radius: 1rem;
   font-weight: bold;
   font-size: 1.2rem;
-  padding: 0.8rem 2rem;
+  padding: 0.8rem 2.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .search-btn:hover {
-  background-color: #93cebd;
+  background-color: var(--accent-color-hover);
   transform: scale(1.05);
 }
 
-/* --- Responsive --- */
-@media (max-width: 900px) {
-  .search-fields {
-    flex-direction: column;
-  }
-  .search-box {
-    width: 95%;
-    padding: 1.2rem;
-    bottom: 4%;
-  }
-  .guest-popup {
-    width: 100%;
-  }
+/* === LATEST OFFERS SECTION === */
+.offre {
+  background: #fdfdfd;
+  padding-top: 4rem; /* Add padding to account for moved search box on mobile */
 }
 
-/* offre du moment */
-
-.offre {
-  background: #f9f9f9;
+.offre h2 {
+  font-weight: bold;
+  color: #333;
 }
 
 .offre .card {
@@ -304,11 +292,66 @@ header img {
 
 .offre .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
-.card-header {
-  background: #93cebd;
-  color: black;
-  font-weight: bold;
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+
+/* ======================================= */
+/* === RESPONSIVE STYLES (MEDIA QUERIES) === */
+/* ======================================= */
+
+/* For Tablets and below (e.g., iPad portrait) */
+@media (max-width: 992px) {
+  .search-fields {
+    grid-template-columns: repeat(2, 1fr); /* 2x2 grid */
+  }
+}
+
+/* For Mobile Phones */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column; /* Stack header items vertically */
+    align-items: flex-start;
+  }
+  
+  .header-search {
+    width: 100%;
+  }
+
+  .carousel {
+    height: 50vh; /* Make carousel shorter on mobile */
+  }
+
+  /* --- MOVE SEARCH BOX ON MOBILE --- */
+  .search-box {
+    position: relative; /* Change from absolute */
+    bottom: auto;
+    left: auto;
+    transform: none; /* Reset transform */
+    width: 100%;
+    border-radius: 0;
+    background: #ffffff; /* Give it a solid background */
+    color: #333;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .search-fields {
+    grid-template-columns: 1fr; /* 1 column grid */
+  }
+  
+  .offre {
+    padding-top: 1.5rem; /* Reset padding since search box is no longer overlapping */
+  }
+
+  .guest-popup {
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
