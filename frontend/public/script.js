@@ -155,6 +155,35 @@ document.addEventListener('click', (e) => {
     const rightPriceEl = card.querySelector('.offer-block.offer-right .offer-price');
     if (leftPriceEl) leftPriceEl.textContent = prices.hotel;
     if (rightPriceEl) rightPriceEl.textContent = prices.plane;
+
+    // Accessibility improvements:
+    // - announce price updates to assistive tech
+    // - ensure the offer control has a descriptive aria-label and keyboard semantics
+    try {
+      if (leftPriceEl) {
+        leftPriceEl.setAttribute('aria-live', 'polite');
+        leftPriceEl.setAttribute('aria-atomic', 'true');
+      }
+      if (rightPriceEl) {
+        rightPriceEl.setAttribute('aria-live', 'polite');
+        rightPriceEl.setAttribute('aria-atomic', 'true');
+      }
+
+      const btn = card.querySelector('.card-ruban-variant-wide-btn');
+      if (btn) {
+        // Ensure it's a button control (if it's a <button> element this is a no-op)
+        try { btn.type = btn.type || 'button'; } catch (e) { /* not a <button>, ignore */ }
+
+        const destName = city || 'cette destination';
+        const hotelLabel = prices.hotel || '';
+        const planeLabel = prices.plane || '';
+        const ariaLabel = `Voir l'offre pour ${destName} — hôtel dès ${hotelLabel}, vol dès ${planeLabel}`;
+        btn.setAttribute('aria-label', ariaLabel);
+      }
+    } catch (err) {
+      // If something goes wrong with ARIA assignment, don't break the page
+      console.warn('Accessibility attributes assignment failed', err);
+    }
   });
 
 })();
