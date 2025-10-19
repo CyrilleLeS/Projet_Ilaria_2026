@@ -1,8 +1,49 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap Icons SVG Sprite -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+        <symbol id="bootstrap" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1z"/>
+        </symbol>
+        <symbol id="cpu-fill" viewBox="0 0 16 16">
+            <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018"/>
+            <path d="M13 6.5a6.47 6.47 0 0 1-1.258 3.844q.06.044.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11"/>
+        </symbol>
+        <symbol id="calendar3" viewBox="0 0 16 16">
+            <path d="M8.05 9.6c.336 0 .504-.24.554-.627.04-.534.198-.815.847-1.26.673-.475 1.049-1.09 1.049-1.986 0-1.325-.92-2.227-2.262-2.227-1.02 0-1.792.492-2.1 1.29A1.7 1.7 0 0 0 6 5.48c0 .393.203.64.545.64.272 0 .455-.147.564-.51.158-.592.525-.915 1.074-.915.61 0 1.03.446 1.03 1.084 0 .563-.208.885-.822 1.325-.619.433-.926.914-.926 1.64v.111c0 .428.208.745.585.745"/>
+            <path d="m10.273 2.513-.921-.944.715-.698.622.637.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636a2.89 2.89 0 0 1 4.134 0l-.715.698a1.89 1.89 0 0 0-2.704 0l-.92.944-1.32-.016a1.89 1.89 0 0 0-1.911 1.912l.016 1.318-.944.921a1.89 1.89 0 0 0 0 2.704l.944.92-.016 1.32a1.89 1.89 0 0 0 1.912 1.911l1.318-.016.921.944a1.89 1.89 0 0 0 2.704 0l.92-.944 1.32.016a1.89 1.89 0 0 0 1.911-1.912l-.016-1.318.944-.921a1.89 1.89 0 0 0 0-2.704l-.944-.92.016-1.32a1.89 1.89 0 0 0-1.912-1.911z"/>
+            <path d="M7.001 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0"/>
+        </symbol>
+        <symbol id="home" viewBox="0 0 16 16">
+            <path d="M8 6.982C9.664 5.309 13.825 8.236 8 12 2.175 8.236 6.336 5.309 8 6.982"/>
+            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.707L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.646a.5.5 0 0 0 .708-.707L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+        </symbol>
+        <symbol id="speedometer2" viewBox="0 0 16 16">
+            <path d="M4 9.42h1.063C5.4 12.323 7.317 14 10.34 14c.622 0 1.167-.068 1.659-.185v-1.3c-.484.119-1.045.17-1.659.17-2.1 0-3.455-1.198-3.775-3.264h4.017v-.928H6.497v-.936q-.002-.165.008-.329h4.078v-.927H6.618c.388-1.898 1.719-2.985 3.723-2.985.614 0 1.175.05 1.659.177V2.194A6.6 6.6 0 0 0 10.341 2c-2.928 0-4.82 1.569-5.244 4.3H4v.928h1.01v1.265H4v.928z"/>
+        </symbol>
+        <symbol id="toggles2" viewBox="0 0 16 16">
+            <path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56"/>
+            <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0"/>
+        </symbol>
+        <symbol id="geo-fill" viewBox="0 0 16 16">
+            <path d="M5 6.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0m1.138-1.496A6.6 6.6 0 0 1 7.964 4.5c.666 0 1.303.097 1.893.273a.5.5 0 0 0 .286-.958A7.6 7.6 0 0 0 7.964 3.5c-.734 0-1.441.103-2.102.292a.5.5 0 1 0 .276.962"/>
+            <path fill-rule="evenodd" d="M7.964 1.527c-2.977 0-5.571 1.704-6.32 4.125h-.55A1 1 0 0 0 .11 6.824l.254 1.46a1.5 1.5 0 0 0 1.478 1.243h.263c.3.513.688.978 1.145 1.382l-.729 2.477a.5.5 0 0 0 .48.641h2a.5.5 0 0 0 .471-.332l.482-1.351c.635.173 1.31.267 2.011.267.707 0 1.388-.095 2.028-.272l.543 1.372a.5.5 0 0 0 .465.316h2a.5.5 0 0 0 .478-.645l-.761-2.506C13.81 9.895 14.5 8.559 14.5 7.069q0-.218-.02-.431c.261-.11.508-.266.705-.444.315.306.815.306.815-.417 0 .223-.5.223-.461-.026a1 1 0 0 0 .09-.255.7.7 0 0 0-.202-.645.58.58 0 0 0-.707-.098.74.74 0 0 0-.375.562c-.024.243.082.48.32.654a2 2 0 0 1-.259.153c-.534-2.664-3.284-4.595-6.442-4.595M2.516 6.26c.455-2.066 2.667-3.733 5.448-3.733 3.146 0 5.536 2.114 5.536 4.542 0 1.254-.624 2.41-1.67 3.248a.5.5 0 0 0-.165.535l.66 2.175h-.985l-.59-1.487a.5.5 0 0 0-.629-.288c-.661.23-1.39.359-2.157.359a6.6 6.6 0 0 1-2.157-.359.5.5 0 0 0-.635.304l-.525 1.471h-.979l.633-2.15a.5.5 0 0 0-.17-.534 4.65 4.65 0 0 1-1.284-1.541.5.5 0 0 0-.446-.275h-.56a.5.5 0 0 1-.492-.414l-.254-1.46h.933a.5.5 0 0 0 .488-.393m12.621-.857a.6.6 0 0 1-.098.21l-.044-.025c-.146-.09-.157-.175-.152-.223a.24.24 0 0 1 .117-.173c.049-.027.08-.021.113.012a.2.2 0 0 1 .064.199"/>
+        </symbol>
+        <symbol id="tools" viewBox="0 0 16 16">
+            <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+            <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9 9 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.4 10.4 0 0 1-.524 2.318l-.003.011a11 11 0 0 1-.244.637c-.079.186.074.394.273.362a22 22 0 0 0 .693-.125m.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6-3.004 6-7 6a8 8 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a11 11 0 0 0 .398-2"/>
+        </symbol>
+        <symbol id="icon-hotel" viewBox="0 0 24 24">
+            <path d="M3 11v7a1 1 0 0 0 1 1h2v-4h10v4h2a1 1 0 0 0 1-1v-7H3zm2-5h2v2H5V6zm4 0h6v2H9V6z" fill="currentColor" />
+        </symbol>
+        <symbol id="icon-plane" viewBox="0 0 24 24">
+            <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-1v3l-2 1v1l4-1 4 1v-1l-2-1v-3l8 1z" fill="currentColor" />
+        </symbol>
+    </svg>
 
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="bootstrap.css">
@@ -10,8 +51,10 @@
 
     <title>Accueil</title>
 </head>
+
 <body>
     <!--HEADER-->
+
     <header class="main-header">
         <div class="header-content">
             <a href="#" class="header-logo">
@@ -24,35 +67,39 @@
             </form>
         </div>
     </header>
+
     <!--NAVBAR-->
-    <nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Menu</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarMain">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Vol <span class="visually-hidden">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Vol+Hôtel</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Location</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pages</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
+<nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Menu</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+            aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMain">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Vol <span class="visually-hidden">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Vol+Hôtel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Location</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pages</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+
     <!--CAROUSSEL-->
+
     <section class="hero-section">
         <div class="carousel">
             <button id="left-btn" class="nav-btn">❮</button>
@@ -68,22 +115,25 @@
                 <span class="dot"></span>
             </div>
         </div>
-    <!--RECHERCHE-->
+
+        <!--RECHERCHE-->
+
         <div class="search-box">
             <form class="search-form">
                 <div class="search-fields">
                     <div class="search-field">
-                        <label for="service"style="color: white;text-shadow: 2px 2px 4px #000000;"">Quoi ?</label>
-                        <select id="service" name="service">
+                        <label for="service" style="color: white;text-shadow: 2px 2px 4px #000000;"">Quoi ?</label>
+                                        <select id=" service" name="service">
                             <option value="hotel">Hôtel</option>
                             <option value="avion">Avion</option>
                             <option value="vol-hotel">Avion + Hôtel</option>
                             <option value="voiture">Location de voiture</option>
-                        </select>
+                            </select>
                     </div>
                     <div class="search-field">
                         <label for="destination" style="color: white;text-shadow: 2px 2px 4px #000000;"">Où ?</label>
-                        <input type="text" id="destination" name="destination" placeholder="Destination, ville...">
+                                        <input type=" text" id="destination" name="destination"
+                            placeholder="Destination, ville...">
                     </div>
                     <div class="search-field">
                         <label for="start-date" style="color: white;text-shadow: 2px 2px 4px #000000;">Quand ?</label>
@@ -100,15 +150,18 @@
                             <div class="guest-popup">
                                 <div class="guest-row">
                                     <span>Chambres</span>
-                                    <div class="counter"><button type="button" class="minus">-</button><span class="count">1</span><button type="button" class="plus">+</button></div>
+                                    <div class="counter"><button type="button" class="minus">-</button><span
+                                            class="count">1</span><button type="button" class="plus">+</button></div>
                                 </div>
                                 <div class="guest-row">
                                     <span>Adultes</span>
-                                    <div class="counter"><button type="button" class="minus">-</button><span class="count">2</span><button type="button" class="plus">+</button></div>
+                                    <div class="counter"><button type="button" class="minus">-</button><span
+                                            class="count">2</span><button type="button" class="plus">+</button></div>
                                 </div>
                                 <div class="guest-row">
                                     <span>Enfants</span>
-                                    <div class="counter"><button type="button" class="minus">-</button><span class="count">0</span><button type="button" class="plus">+</button></div>
+                                    <div class="counter"><button type="button" class="minus">-</button><span
+                                            class="count">0</span><button type="button" class="plus">+</button></div>
                                 </div>
                                 <button type="button" class="close-popup">OK</button>
                             </div>
@@ -120,57 +173,505 @@
                 </div>
             </form>
         </div>
-    </section>
+        </section>
+
     <!--OFFRES DU MOMENT-->
-    <section class="offre py-5">
-        <div class="container text-center">
-            <hr>
-            <h2>EXPLOREZ NOS DERNIÈRES OFFRES</h2>
-            <div class="row align-items-stretch g-4 mt-3">
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="card h-100 shadow-sm">
-                        <img src="images/vacances1.jpg" class="card-img-top" alt="Plage tropicale ensoleillée">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <button type="button" class="btn btn-primary">Découvrir</button>
-                        </div>
+    
+<section class="offre py-5">
+    <div class="container text-center">
+        <hr>
+        <h2 style="padding-top: 25px;">EXPLOREZ NOS DERNIÈRES OFFRES</h2>
+        <div class="row align-items-stretch g-4 mt-3">
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card h-100 shadow-sm">
+                    <img src="images/escapade.jpg" class="card-img-top" alt="Escapade Hivernale">
+                    <div class="card-body">
+                        <p class="card-text">Escapade hivernale à moins 30% !</p>
+                        <button type="button" class="btn btn-primary">Découvrir</button>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="card h-100 shadow-sm">
-                        <img src="images/vacances2.jpg" class="card-img-top" alt="Vue sur une ville européenne historique">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <button type="button" class="btn btn-primary">Découvrir</button>
-                        </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card h-100 shadow-sm">
+                    <img src="images/nouvelan.png" class="card-img-top" alt="nouvel an">
+                    <div class="card-body">
+                        <p class="card-text">Passez le nouvel-an ou vous voulez !</p>
+                        <button type="button" class="btn btn-primary">Découvrir</button>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="card h-100 shadow-sm">
-                        <img src="images/vacances3.jpg" class="card-img-top" alt="Paysage de montagne avec un lac">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <button type="button" class="btn btn-primary">Découvrir</button>
-                        </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card h-100 shadow-sm">
+                    <img src="images/alpes.jpg" class="card-img-top" alt="Paysage de montagne">
+                    <div class="card-body">
+                        <p class="card-text">Week-end de ski dans les alpes !</p>
+                        <button type="button" class="btn btn-primary">Découvrir</button>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="card h-100 shadow-sm">
-                        <img src="images/vacances4.jpg" class="card-img-top" alt="Aventure dans un désert">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <button type="button" class="btn btn-primary">Découvrir</button>
-                        </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card h-100 shadow-sm">
+                    <img src="images/thailand.jpg" class="card-img-top" alt="Thaïlande">
+                    <div class="card-body">
+                        <p class="card-text">Decouvrez la Thaïlande !</p>
+                        <button type="button" class="btn btn-primary">Découvrir</button>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!--TOP DES DESTINATIONS-->
-    <section>
+    </div>
+</section>
 
-    </section>
-    
+<!--TOP DES DESTINATIONS-->
+
+<section>
+    <div class="container my-5">
+        <hr>
+        <h2 style="text-align: center;padding: 25px;">TOP DES DÉSTINATIONS AUTOUR DU MONDE</h2>
+        <div class="row justify-content-center g-4">
+
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2-4">
+                <div class="card-ruban-variant">
+                    <img src="images/paris.jpg" alt="Hôtel moderne" class="card-ruban-variant-img">
+                    <div class="card-ruban-variant-content">
+                        <div class="card-ruban-variant-text">Paris</div>
+                        <button class="card-ruban-variant-btn">Tout voir</button>
+                    </div>
+                    <div class="card-ruban-variant-ribbon">
+                        <button class="card-ruban-variant-wide-btn">
+                            <span class="offer-block offer-left">
+                                <svg class="offer-icon" aria-hidden="true" focusable="false" width="44" height="44"><use xlink:href="#icon-hotel"></use></svg>
+                                <span class="offer-text"><span class="offer-small">à partir de</span><span class="offer-price">70$</span></span>
+                            </span>
+                            <span class="offer-separator" aria-hidden="true"></span>
+                            <span class="offer-block offer-right">
+                                <svg class="offer-icon" aria-hidden="true" focusable="false" width="44" height="44"><use xlink:href="#icon-plane"></use></svg>
+                                <span class="offer-text"><span class="offer-small">à partir de</span><span class="offer-price">150$</span></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2-4">
+                <div class="card-ruban-variant">
+                    <img src="images/petersbourg.jpg" alt="Hôtel moderne" class="card-ruban-variant-img">
+                    <div class="card-ruban-variant-content">
+                        <div class="card-ruban-variant-text">St Petersburg</div>
+                        <button class="card-ruban-variant-btn">Tout voir</button>
+                    </div>
+                    <div class="card-ruban-variant-ribbon">
+                        <button class="card-ruban-variant-wide-btn">
+                            <span class="offer-block offer-left">
+                                <span class="offer-icon">🏨</span>
+                                <span class="offer-text"><span class="offer-small">à partir de</span><span class="offer-price">70$</span></span>
+                            </span>
+                            <span class="offer-separator" aria-hidden="true"></span>
+                            <span class="offer-block offer-right">
+                                <span class="offer-icon">✈️</span>
+                                <span class="offer-text"><span class="offer-small">à partir de</span><span class="offer-price">150$</span></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2-4">
+                <div class="card-ruban-variant">
+                    <img src="images/prague.jpg" alt="Hôtel moderne" class="card-ruban-variant-img">
+                    <div class="card-ruban-variant-content">
+                        <div class="card-ruban-variant-text">Prague</div>
+                        <button class="card-ruban-variant-btn">Tout voir</button>
+                    </div>
+                    <div class="card-ruban-variant-ribbon">
+                        <button class="card-ruban-variant-wide-btn">
+                            <span class="offer-block offer-left">
+                                <span class="offer-icon">🏨</span>
+                                <span class="offer-text"><span class="offer-small">à partir de</span><span class="offer-price">70$</span></span>
+                            </span>
+                            <span class="offer-separator" aria-hidden="true"></span>
+                            <span class="offer-block offer-right">
+                                <span class="offer-icon">✈️</span>
+                                <span class="offer-text"><span class="offer-small">à partir de</span><span class="offer-price">150$</span></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2-4">
+                <div class="card-ruban-variant">
+                    <img src="images/amsterdam.jpg" alt="Hôtel moderne" class="card-ruban-variant-img">
+                    <div class="card-ruban-variant-content">
+                        <div class="card-ruban-variant-text">Amsterdam</div>
+                        <button class="card-ruban-variant-btn">Tout voir</button>
+                    </div>
+                    <div class="card-ruban-variant-ribbon">
+                        <button class="card-ruban-variant-wide-btn">
+                            <span class="offer-block offer-left">
+                                <span class="offer-icon">🏨</span>
+                                <span class="offer-text"><span class="offer-small">à partir de</span><span class="offer-price">70$</span></span>
+                            </span>
+                            <span class="offer-separator" aria-hidden="true"></span>
+                            <span class="offer-block offer-right">
+                                <span class="offer-icon">✈️</span>
+                                <span class="offer-text"><span class="offer-small">à partir de</span><span class="offer-price">150$</span></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div><br>
+        <div class="row justify-content-center g-4">
+
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2-4">
+                <div class="card-ruban-variant">
+                    <img src="images/amsterdam.jpg" alt="Hôtel moderne" class="card-ruban-variant-img">
+                    <div class="card-ruban-variant-content">
+                        <div class="card-ruban-variant-text">Amsterdam</div>
+                        <button class="card-ruban-variant-btn">Tout voir</button>
+                    </div>
+                    <div class="card-ruban-variant-ribbon">
+                        <button class="card-ruban-variant-wide-btn">
+                            <span class="offer-block offer-left">
+                                <span class="offer-icon">🏨</span>
+                                <span class="offer-text"><span class="offer-small">à partir de</span><span class="offer-price">70$</span></span>
+                            </span>
+                            <span class="offer-separator" aria-hidden="true"></span>
+                            <span class="offer-block offer-right">
+                                <span class="offer-icon">✈️</span>
+                                <span class="offer-text"><span class="offer-small">à partir de</span><span class="offer-price">150$</span></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2-4">
+                <div class="card-ruban-variant">
+                    <img src="images/prague.jpg" alt="Hôtel moderne" class="card-ruban-variant-img">
+                    <div class="card-ruban-variant-content">
+                        <div class="card-ruban-variant-text">Prague</div>
+                        <button class="card-ruban-variant-btn">Tout voir</button>
+                    </div>
+                    <div class="card-ruban-variant-ribbon">
+                        <button class="card-ruban-variant-wide-btn">
+                            <span class="offer-block offer-left">
+                                <span class="offer-icon">🏨</span>
+                                <span class="offer-text"><span class="offer-small">à partir de</span><span class="offer-price">70$</span></span>
+                            </span>
+                            <span class="offer-separator" aria-hidden="true"></span>
+                            <span class="offer-block offer-right">
+                                <span class="offer-icon">✈️</span>
+                                <span class="offer-text"><span class="offer-small">à partir de</span><span class="offer-price">150$</span></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2-4">
+                <div class="card-ruban-variant">
+                    <img src="images/paris.jpg" alt="Hôtel moderne" class="card-ruban-variant-img">
+                    <div class="card-ruban-variant-content">
+                        <div class="card-ruban-variant-text">Paris</div>
+                        <button class="card-ruban-variant-btn">Tout voir</button>
+                    </div>
+                    <div class="card-ruban-variant-ribbon">
+                        <button class="card-ruban-variant-wide-btn">
+                            <span class="offer-block offer-left">
+                                <span class="offer-icon">🏨</span>
+                                <span class="offer-text"><span class="offer-small">à partir de</span><span class="offer-price">70$</span></span>
+                            </span>
+                            <span class="offer-separator" aria-hidden="true"></span>
+                            <span class="offer-block offer-right">
+                                <span class="offer-icon">✈️</span>
+                                <span class="offer-text"><span class="offer-small">à partir de</span><span class="offer-price">150$</span></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2-4">
+                <div class="card-ruban-variant">
+                    <img src="images/petersbourg.jpg" alt="Hôtel moderne" class="card-ruban-variant-img">
+                    <div class="card-ruban-variant-content">
+                        <div class="card-ruban-variant-text">St Petersburg</div>
+                        <button class="card-ruban-variant-btn">Tout voir</button>
+                    </div>
+                    <div class="card-ruban-variant-ribbon">
+                        <button class="card-ruban-variant-wide-btn">
+                            <span class="offer-block offer-left">
+                                <span class="offer-icon">🏨</span>
+                                <span class="offer-text"><span class="offer-small">à partir de</span><span class="offer-price">70$</span></span>
+                            </span>
+                            <span class="offer-separator" aria-hidden="true"></span>
+                            <span class="offer-block offer-right">
+                                <span class="offer-icon">✈️</span>
+                                <span class="offer-text"><span class="offer-small">à partir de</span><span class="offer-price">150$</span></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div><br>
+        <div class="row justify-content-center g-4">
+
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2-4">
+                <div class="card-ruban-variant">
+                    <img src="images/petersbourg.jpg" alt="Hôtel moderne" class="card-ruban-variant-img">
+                    <div class="card-ruban-variant-content">
+                        <div class="card-ruban-variant-text">St Petersburg</div>
+                        <button class="card-ruban-variant-btn">Tout voir</button>
+                    </div>
+                    <div class="card-ruban-variant-ribbon">
+                        <button class="card-ruban-variant-wide-btn">
+                            <span class="offer-block offer-left">
+                                <span class="offer-icon">🏨</span>
+                                <span class="offer-text"><span class="offer-small">à partir de</span><span class="offer-price">70$</span></span>
+                            </span>
+                            <span class="offer-separator" aria-hidden="true"></span>
+                            <span class="offer-block offer-right">
+                                <span class="offer-icon">✈️</span>
+                                <span class="offer-text"><span class="offer-small">à partir de</span><span class="offer-price">150$</span></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2-4">
+                <div class="card-ruban-variant">
+                    <img src="images/paris.jpg" alt="Hôtel moderne" class="card-ruban-variant-img">
+                    <div class="card-ruban-variant-content">
+                        <div class="card-ruban-variant-text">Paris</div>
+                        <button class="card-ruban-variant-btn">Tout voir</button>
+                    </div>
+                    <div class="card-ruban-variant-ribbon">
+                        <button class="card-ruban-variant-wide-btn">
+                            <span class="offer-block offer-left">
+                                <span class="offer-icon">🏨</span>
+                                <span class="offer-text"><span class="offer-small">à partir de</span><span class="offer-price">70$</span></span>
+                            </span>
+                            <span class="offer-separator" aria-hidden="true"></span>
+                            <span class="offer-block offer-right">
+                                <span class="offer-icon">✈️</span>
+                                <span class="offer-text"><span class="offer-small">à partir de</span><span class="offer-price">150$</span></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2-4">
+                <div class="card-ruban-variant">
+                    <img src="images/amsterdam.jpg" alt="Hôtel moderne" class="card-ruban-variant-img">
+                    <div class="card-ruban-variant-content">
+                        <div class="card-ruban-variant-text">Amsterdam</div>
+                        <button class="card-ruban-variant-btn">Tout voir</button>
+                    </div>
+                    <div class="card-ruban-variant-ribbon">
+                        <button class="card-ruban-variant-wide-btn">
+                            <span class="offer-block offer-left">
+                                <span class="offer-icon">🏨</span>
+                                <span class="offer-text"><span class="offer-small">à partir de</span><span class="offer-price">70$</span></span>
+                            </span>
+                            <span class="offer-separator" aria-hidden="true"></span>
+                            <span class="offer-block offer-right">
+                                <span class="offer-icon">✈️</span>
+                                <span class="offer-text"><span class="offer-small">à partir de</span><span class="offer-price">150$</span></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2-4">
+                <div class="card-ruban-variant">
+                    <img src="images/prague.jpg" alt="Hôtel moderne" class="card-ruban-variant-img">
+                    <div class="card-ruban-variant-content">
+                        <div class="card-ruban-variant-text">Prague</div>
+                        <button class="card-ruban-variant-btn">Tout voir</button>
+                    </div>
+                    <div class="card-ruban-variant-ribbon">
+                        <button class="card-ruban-variant-wide-btn">
+                            <span class="offer-block offer-left">
+                                <span class="offer-icon">🏨</span>
+                                <span class="offer-text"><span class="offer-small">à partir de</span><span class="offer-price">70$</span></span>
+                            </span>
+                            <span class="offer-separator" aria-hidden="true"></span>
+                            <span class="offer-block offer-right">
+                                <span class="offer-icon">✈️</span>
+                                <span class="offer-text"><span class="offer-small">à partir de</span><span class="offer-price">150$</span></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+<!--CADRES MISE EN VALEURS-->
+
+<section>
+    <div class="container px-4 py-5" id="icon-grid"><hr>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+            <div class="col d-flex align-items-start">
+                <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"
+                    aria-hidden="true">
+                    <use xlink:href="#bootstrap"></use>
+                </svg>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Hôtels triés sur le volet</h3>
+                    <p>Tous les hôtels "reservez votre hôtel" répondent à des critères de sélection stricts. Chaque hôtel est sélectionné individuellement et l'inclusion n'est pas payante.</p>
+                </div>
+            </div>
+            <div class="col d-flex align-items-start">
+                <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"
+                    aria-hidden="true">
+                    <use xlink:href="#cpu-fill"></use>
+                </svg>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Descriptions détaillées</h3>
+                    <p>Afin de vous donner une impression précise de l'hôtel, nous nous efforçons de publier des descriptions d'hôtel transparentes, équilibrées et précises.</p>
+                </div>
+            </div>
+            <div class="col d-flex align-items-start">
+                <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"
+                    aria-hidden="true">
+                    <use xlink:href="#calendar3"></use>
+                </svg>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Connaissances exclusives</h3>
+                    <p>Nous avons fait nos recherches. Nos recruteurs sont toujours occupés à en savoir plus sur nos hôtels, les environs et les activités proposées à proximité.</p>
+                </div>
+            </div>
+            <div class="col d-flex align-items-start">
+                <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"
+                    aria-hidden="true">
+                    <use xlink:href="#home"></use>
+                </svg>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Service passionné</h3>
+                    <p>L'équipe "reservez votre hôtel" répondra à vos demandes spécifiques. Nous vous offrons des conseils avisés et passionnés pour trouver l'hôtel idéal.</p>
+                </div>
+            </div>
+            <div class="col d-flex align-items-start">
+                <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"
+                    aria-hidden="true">
+                    <use xlink:href="#speedometer2"></use>
+                </svg>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Garantie du meilleur prix</h3>
+                    <p>Nous vous proposons les meilleurs hôtels aux meilleurs prix. Si vous trouvez la même catégorie de chambre moins chère ailleurs aux mêmes dates, nous vous remboursons la différence. C'est garanti et rapide.</p>
+                </div>
+            </div>
+            <div class="col d-flex align-items-start">
+                <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"
+                    aria-hidden="true">
+                    <use xlink:href="#toggles2"></use>
+                </svg>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Réservation sécurisée</h3>
+                    <p>Le système de réservation Book Your Travel est sécurisé et votre carte de crédit et vos informations personnelles sont cryptées. Nous travaillons selon des normes élevées et garantissons votre confidentialité.</p>
+                </div>
+            </div>
+            <div class="col d-flex align-items-start">
+                <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"
+                    aria-hidden="true">
+                    <use xlink:href="#geo-fill"></use>
+                </svg>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Avantages pour les hôteliers</h3>
+                    <p>Nous proposons un modèle rentable, un réseau de plus de 5 000 partenaires et un service de gestion de compte personnalisé pour vous aider à optimiser vos revenus.</p>
+                </div>
+            </div>
+            <div class="col d-flex align-items-start">
+                <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"
+                    aria-hidden="true">
+                    <use xlink:href="#tools"></use>
+                </svg>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Des questions ?</h3>
+                    <p>Appelez-nous au 1-555-555-555 pour des conseils personnalisés et personnalisés pour votre séjour parfait ou envoyez-nous un message avec votre demande de réservation d'hôtel.</p>
+                </div>
+            </div>
+        </div><hr>
+    </div>
+</section>
+
+<!--FOOTER-->
+
+<footer class="container px-4 " style="padding: 0px;">
+    <div class="row">
+        <div class="col-6 col-md-2 mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+            </ul>
+        </div>
+        <div class="col-6 col-md-2 mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+            </ul>
+        </div>
+        <div class="col-6 col-md-2 mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+            </ul>
+        </div>
+        <div class="col-md-5 offset-md-1 mb-3">
+            <form>
+                <h5>Subscribe to our newsletter</h5>
+                <p>Monthly digest of what's new and exciting from us.</p>
+                <div class="d-flex flex-column flex-sm-row w-100 gap-2"> <label for="newsletter1"
+                        class="visually-hidden">Email address</label> <input id="newsletter1" type="email"
+                        class="form-control" placeholder="Email address"> <button class="btn btn-primary"
+                        type="button">Subscribe</button> </div>
+            </form>
+        </div>
+    </div>
+    <div class="d-flex flex-column flex-sm-row justify-content-between">
+        <p>© 2025 Company, Inc. All rights reserved.</p>
+        <ul class="list-unstyled d-flex">
+            <li class="ms-3"><a class="link-body-emphasis" href="#" aria-label="Instagram"><svg class="bi" width="24"
+                        height="24">
+                        <use xlink:href="#instagram"></use>
+                    </svg></a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#" aria-label="Facebook"><svg class="bi" width="24"
+                        height="24" aria-hidden="true">
+                        <use xlink:href="#facebook"></use>
+                    </svg></a></li>
+        </ul>
+    </div>
+</footer>
     <script src="script.js"></script>
 </body>
+
 </html>

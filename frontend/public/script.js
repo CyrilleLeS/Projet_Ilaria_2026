@@ -104,3 +104,58 @@ document.addEventListener('click', (e) => {
     popup.style.display = 'none';
   }
 });
+
+// === Remplacer les icônes emoji par des SVG et peupler les prix dynamiquement ===
+(() => {
+  const priceMap = {
+    'Paris': { hotel: '70$', plane: '150$' },
+    'St Petersburg': { hotel: '65$', plane: '140$' },
+    'Prague': { hotel: '55$', plane: '120$' },
+    'Amsterdam': { hotel: '60$', plane: '130$' },
+    // valeurs par défaut si la ville n'est pas listée
+    'default': { hotel: '70$', plane: '150$' }
+  };
+
+  // Helper : créer un <svg><use ...></use></svg>
+  function makeUse(id, size = 44) {
+    const svgns = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(svgns, 'svg');
+    svg.setAttribute('width', size);
+    svg.setAttribute('height', size);
+    svg.setAttribute('class', 'offer-icon');
+    svg.setAttribute('aria-hidden', 'true');
+    const use = document.createElementNS(svgns, 'use');
+    // prefer href when supported, fall back to xlink:href for older browsers
+    use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', `#${id}`);
+    svg.appendChild(use);
+    return svg;
+  }
+
+  // Parcourir toutes les cartes
+  document.querySelectorAll('.card-ruban-variant').forEach(card => {
+    const cityEl = card.querySelector('.card-ruban-variant-text');
+    const city = cityEl ? cityEl.textContent.trim() : '';
+    const prices = priceMap[city] || priceMap['default'];
+
+    // Remplacer les icônes (left/right) si présents
+    const leftIconSpan = card.querySelector('.offer-block.offer-left .offer-icon');
+    const rightIconSpan = card.querySelector('.offer-block.offer-right .offer-icon');
+
+    if (leftIconSpan) {
+      const svg = makeUse('icon-hotel', 44);
+      leftIconSpan.replaceWith(svg);
+    }
+    if (rightIconSpan) {
+      const svg = makeUse('icon-plane', 44);
+      rightIconSpan.replaceWith(svg);
+    }
+
+    // Appliquer les prix dynamiques
+    const leftPriceEl = card.querySelector('.offer-block.offer-left .offer-price');
+    const rightPriceEl = card.querySelector('.offer-block.offer-right .offer-price');
+    if (leftPriceEl) leftPriceEl.textContent = prices.hotel;
+    if (rightPriceEl) rightPriceEl.textContent = prices.plane;
+  });
+
+})();
+

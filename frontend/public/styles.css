@@ -39,6 +39,8 @@ hr {
   color: #333;
 }
 
+
+
 .header-logo img {
   width: 50px;
   height: 50px;
@@ -136,7 +138,7 @@ hr {
 /* === RECHERCHE === */
 .search-box {
   position: absolute;
-  bottom: 5%;
+  bottom: 15%;
   left: 50%;
   transform: translateX(-50%);
   width: 80%;
@@ -282,32 +284,165 @@ hr {
 }
 
 /* === DERNIERES OFFRES === */
-.offre {
-  background: #fdfdfd;
-  padding-top: 4rem; 
+/* Forcer 5 colonnes sur desktop */
+@media (min-width: 992px) {
+  .col-lg-2-4 {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
 }
 
-.offre h2 {
-  font-weight: bold;
-  color: #333;
-}
-
-.offre .card {
-  border: none;
+/* Carte principale */
+.card-ruban-variant {
+  position: relative;
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.offre .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+.card-ruban-variant:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-.card-img-top {
-    height: 200px;
-    object-fit: cover;
+.card-ruban-variant-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
 }
 
-/* TOP DESTINATIONS */
+.card-ruban-variant-content {
+  padding: 15px;
+  text-align: center;
+  flex: 1;
+}
+
+.card-ruban-variant-text {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card-ruban-variant-btn {
+  background-color: #43b4a6;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.card-ruban-variant-btn:hover {
+  background-color: #369688;
+}
+
+/* Ruban bas (propre et rectangulaire) */
+.card-ruban-variant-ribbon {
+  position: relative;
+  width: 100%;
+  background-color: #c7b8aa;
+  text-align: center;
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.15);
+}
+
+.card-ruban-variant-wide-btn {
+  display: block;
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: #fff;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.card-ruban-variant-wide-btn:hover {
+  background-color: #b9aa9e;
+}
+
+/* Structured offer button inside ribbon */
+.card-ruban-variant-wide-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 0.6rem;
+  background: linear-gradient(90deg, #e67e22 0%, #f7ca18 100%);
+  color: #fff;
+  border-radius: 0;
+}
+.card-ruban-variant-wide-btn:focus {
+  outline: 3px solid rgba(0,0,0,0.12);
+}
+.card-ruban-variant-wide-btn .offer-block {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.card-ruban-variant-wide-btn .offer-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px; /* roughly two text lines height */
+  height: 44px; /* makes the icon area squared */
+  font-size: 1.4rem;
+}
+.card-ruban-variant-wide-btn .offer-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  text-align: left;
+}
+.card-ruban-variant-wide-btn .offer-small {
+  font-size: 0.7rem;
+  opacity: 0.95;
+}
+.card-ruban-variant-wide-btn .offer-price {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #111;
+  margin-top: 2px;
+}
+.card-ruban-variant-wide-btn .offer-separator {
+  width: 1px;
+  height: 46px;
+  background: rgba(0,0,0,0.12);
+  margin: 0 8px;
+  flex-shrink: 0;
+}
+
+/* Make text and prices responsive */
+@media (max-width: 576px) {
+  .card-ruban-variant-wide-btn {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 0.4rem;
+  }
+  .card-ruban-variant-wide-btn .offer-separator {
+    display: none;
+  }
+  .card-ruban-variant-wide-btn .offer-block {
+    justify-content: center;
+  }
+  .card-ruban-variant-wide-btn .offer-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 1.2rem;
+  }
+}
+
+
+/*MISE EN VALEURS,ARGUMENTS*/
+
 
 /* ======================================= */
 /* === MEDIA QUERIES POUR LE RESPONSIVE === */
