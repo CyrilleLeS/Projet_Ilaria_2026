@@ -1,0 +1,211 @@
+/* ==========================================================
+   🌿 STYLE GLOBAL - SITE DE RÉSERVATION HÔTEL / VOLS
+   ========================================================== */
+
+/* === PALETTE DE COULEURS === */
+:root {
+  --color-primary: #93cebd;        /* vert menthe */
+  --color-primary-hover: #7ab9a6;
+  --color-secondary: #f4ede4;      /* beige sable clair */
+  --color-accent: #3498db;         /* bleu azur */
+  --color-accent-hover: #217dbb;
+  --color-text: #333;
+  --color-bg: #e9e6e0;
+  --radius-soft: 0.75rem;
+  --shadow-soft: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --transition: 0.3s ease;
+}
+
+body {
+  font-family: "Nunito", system-ui, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ACCESSIBILITÉ */
+.skip-link {
+  position: absolute;
+  left: -999px;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  background: #000;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+}
+
+/* ==========================================================
+   🧭 HEADER
+   ========================================================== */
+.main-header {
+  background-color: var(--color-primary);
+  padding: 1rem 2rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.header-logo img {
+  width: 50px;
+  height: 50px;
+}
+
+.header-logo h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* ==========================================================
+   🗺️ SECTION CONTACT
+   ========================================================== */
+.contact-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  background-color: var(--color-secondary);
+}
+
+/* FORMULAIRE */
+.contact-form {
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: var(--radius-soft);
+  box-shadow: var(--shadow-soft);
+  max-width: 480px;
+  width: 100%;
+}
+
+.contact-form h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-accent);
+}
+
+.contact-form p {
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.contact-form label {
+  font-size: 0.9rem;
+  color: #666;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #ddd;
+  border-radius: var(--radius-soft);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: var(--color-accent);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.contact-form button:hover {
+  background-color: var(--color-accent-hover);
+}
+
+/* INFOS + MAP */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+.contact-info h3 {
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+.contact-info p {
+  margin-bottom: 1rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.social-links a img {
+  width: 32px;
+  height: 32px;
+  transition: var(--transition);
+}
+
+.social-links a img:hover {
+  transform: scale(1.1);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 350px;
+  border-radius: var(--radius-soft);
+  border: none;
+  box-shadow: var(--shadow-soft);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .contact-section {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+  .contact-form,
+  .contact-info {
+    max-width: 100%;
+  }
+}

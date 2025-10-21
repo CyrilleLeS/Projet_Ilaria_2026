@@ -1,15 +1,35 @@
-/* === STYLE GENERAL === */
+/* ==========================================================
+   🎨 STYLE GLOBAL - SITE DE RÉSERVATION HÔTEL / VOLS
+   ========================================================== */
+
+/* === PALETTE DE COULEURS ===
+   Vert menthe : couleur principale (fraîcheur, confiance)
+   Beige sable : teinte d’arrière-plan douce (chaleur, confort)
+   Bleu azur : accent secondaire (voyage, fiabilité)
+   ========================================================== */
 :root {
-  --accent-color: #93cebd;
-  --accent-color-hover: #7ab9a6;
+  --color-primary: #93cebd;        /* vert menthe */
+  --color-primary-hover: #7ab9a6;  /* vert menthe foncé */
+  --color-secondary: #c7b8aa;      /* beige sable */
+  --color-accent: #3498db;         /* bleu azur */
+  --color-accent-hover: #217dbb;   /* bleu azur foncé */
+  --color-text: #333;
+  --color-bg: #e9e6e0;
+  --radius-soft: 1rem;
+  --transition-fast: 0.3s ease;
+  --shadow-soft: 0 3px 8px rgba(0, 0, 0, 0.15);
 }
 
+/* === STYLE DE BASE === */
 body {
-  background-color: #E9E6E0;
+  background-color: var(--color-bg);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.6;
 }
 
-/* Accessibility helpers */
+/* === ACCESSIBILITÉ === */
 .skip-link {
   position: absolute;
   left: -999px;
@@ -18,36 +38,36 @@ body {
   height: 1px;
   overflow: hidden;
 }
-.skip-link:focus,
-.visually-hidden-focusable:focus {
+.skip-link:focus {
   left: 1rem;
   top: 1rem;
-  width: auto;
-  height: auto;
   padding: 0.5rem 0.75rem;
   background: #000;
   color: #fff;
-  z-index: 9999;
   border-radius: 4px;
+  z-index: 9999;
   text-decoration: none;
 }
 
-/* High-visibility focus for keyboard users */
+/* Focus visible clair pour navigation clavier */
 :focus-visible {
   outline: 3px solid #ffbf47;
   outline-offset: 2px;
 }
 
+/* Ligne horizontale sobre */
 hr {
-  border: none; 
-  height: 2px; 
-  background-color: #333; 
-  margin: 20px 0; 
+  border: none;
+  height: 2px;
+  background-color: #333;
+  margin: 20px 0;
 }
 
-/* === HEADER === */
+/* ==========================================================
+   🧭 EN-TÊTE
+   ========================================================== */
 .main-header {
-  background-color: #93cebd; 
+  background-color: var(--color-primary);
   padding: 1rem 2rem;
   border-bottom: 1px solid #dee2e6;
 }
@@ -56,7 +76,7 @@ hr {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
@@ -65,10 +85,8 @@ hr {
   align-items: center;
   gap: 0.75rem;
   text-decoration: none;
-  color: #333;
+  color: var(--color-text);
 }
-
-
 
 .header-logo img {
   width: 50px;
@@ -77,15 +95,18 @@ hr {
 
 .header-logo h2 {
   font-size: 1.5rem;
-  margin: 0;
   font-weight: 600;
+  margin: 0;
 }
 
 .header-search {
   min-width: 250px;
 }
 
-/* === CAROUSSEL ET RECHERCHE === */
+/* ==========================================================
+   🎠 SECTION HERO + CARROUSEL
+   ========================================================== */
+
 .hero-section {
   position: relative;
   width: 100%;
@@ -112,13 +133,16 @@ hr {
   height: 100%;
   object-fit: cover;
   opacity: 0;
+  z-index: 0;
   transition: opacity 1s ease-in-out;
 }
 
 .carousel-container img.active {
   opacity: 1;
+  z-index: 1;
 }
 
+/* Boutons de navigation du carrousel */
 .nav-btn {
   position: absolute;
   top: 50%;
@@ -131,16 +155,16 @@ hr {
   border-radius: 50%;
   cursor: pointer;
   z-index: 5;
-  transition: background 0.3s ease;
+  transition: background var(--transition-fast);
 }
-
-.nav-btn:hover {
+.nav-btn:hover,
+.nav-btn:focus-visible {
   background-color: rgba(0, 0, 0, 0.7);
 }
-
 #left-btn { left: 1.5rem; }
 #right-btn { right: 1.5rem; }
 
+/* Petits points indicateurs */
 .dots-container {
   position: absolute;
   bottom: 20px;
@@ -148,7 +172,6 @@ hr {
   text-align: center;
   z-index: 5;
 }
-
 .dot {
   display: inline-block;
   width: 12px;
@@ -157,14 +180,15 @@ hr {
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 50%;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background var(--transition-fast);
 }
-
 .dot.active {
-  background-color: white;
+  background-color: #fff;
 }
 
-/* === RECHERCHE === */
+/* ==========================================================
+   🔍 BARRE DE RECHERCHE
+   ========================================================== */
 .search-box {
   position: absolute;
   bottom: 15%;
@@ -174,13 +198,14 @@ hr {
   max-width: 1100px;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
-  border-radius: 1.2rem;
+  border-radius: var(--radius-soft);
   padding: 2rem;
   z-index: 6;
-  color: white;
+  color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+/* Structure interne */
 .search-form {
   display: flex;
   flex-direction: column;
@@ -189,7 +214,7 @@ hr {
 
 .search-fields {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
   width: 100%;
 }
@@ -211,92 +236,81 @@ hr {
   border: none;
   font-size: 1rem;
   background-color: rgba(255, 255, 255, 0.9);
-  color: #333;
+  color: var(--color-text);
   width: 100%;
 }
 
-.date-range {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-}
-
+/* Sélecteur d’invités */
 .guest-selector {
   position: relative;
 }
-
 .guest-selector input {
   cursor: pointer;
 }
-
 .guest-popup {
   display: none;
   position: absolute;
   top: 110%;
   left: 0;
   width: 280px;
-  background: white;
-  color: black;
+  background: #fff;
+  color: var(--color-text);
   border-radius: 0.8rem;
   padding: 1rem;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  box-shadow: var(--shadow-soft);
   z-index: 10;
 }
-
 .guest-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.8rem;
 }
-
 .counter {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
-
 .counter button {
   width: 28px;
   height: 28px;
   border: none;
   border-radius: 50%;
-  background: var(--accent-color);
+  background: var(--color-primary);
   font-weight: bold;
-  color: black;
+  color: #000;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color var(--transition-fast);
 }
-
 .counter button:hover {
-  background: var(--accent-color-hover);
+  background: var(--color-primary-hover);
 }
 
+/* Bouton fermer */
 .close-popup {
   display: block;
   width: 100%;
   border: none;
-  background: var(--accent-color);
-  color: black;
+  background: var(--color-primary);
+  color: #000;
   border-radius: 0.5rem;
   padding: 0.5rem;
   cursor: pointer;
   font-weight: bold;
-  transition: background-color 0.2s;
+  transition: background-color var(--transition-fast);
 }
-
 .close-popup:hover {
-  background: var(--accent-color-hover);
+  background: var(--color-primary-hover);
 }
 
+/* Bouton principal de recherche */
 .search-button-wrapper {
   margin-top: 1.5rem;
   width: 100%;
   text-align: center;
 }
-
 .search-btn {
-  background-color: var(--accent-color);
+  background-color: var(--color-primary);
   color: #000;
   border: none;
   border-radius: 1rem;
@@ -304,16 +318,18 @@ hr {
   font-size: 1.2rem;
   padding: 0.8rem 2.5rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all var(--transition-fast);
 }
-
 .search-btn:hover {
-  background-color: var(--accent-color-hover);
+  background-color: var(--color-primary-hover);
   transform: scale(1.05);
 }
 
-/* === DERNIERES OFFRES === */
-/* Forcer 5 colonnes sur desktop */
+/* ==========================================================
+   🏨 CARTES D’OFFRES (Dernières offres)
+   ========================================================== */
+
+/* Grille 5 colonnes sur desktop */
 @media (min-width: 992px) {
   .col-lg-2-4 {
     flex: 0 0 20%;
@@ -321,95 +337,76 @@ hr {
   }
 }
 
-/* Carte principale */
 .card-ruban-variant {
   position: relative;
   background: #fff;
-  border-radius: 6px;
+  border-radius: 0.6rem;
   overflow: hidden;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  box-shadow: var(--shadow-soft);
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
-
 .card-ruban-variant:hover {
   transform: translateY(-4px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-
 .card-ruban-variant-img {
   width: 100%;
   height: 180px;
   object-fit: cover;
 }
-
 .card-ruban-variant-content {
   padding: 15px;
   text-align: center;
   flex: 1;
 }
-
 .card-ruban-variant-text {
   font-weight: 600;
-  color: #333;
   margin-bottom: 10px;
 }
 
+/* Bouton "Voir l'offre" */
 .card-ruban-variant-btn {
-  background-color: #43b4a6;
+  background-color: var(--color-primary);
   color: #fff;
   border: none;
   border-radius: 20px;
   padding: 6px 16px;
   font-size: 0.9rem;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background var(--transition-fast);
 }
-
 .card-ruban-variant-btn:hover {
-  background-color: #369688;
+  background-color: var(--color-primary-hover);
 }
 
-/* Ruban bas (propre et rectangulaire) */
+/* Ruban bas */
 .card-ruban-variant-ribbon {
-  position: relative;
   width: 100%;
-  background-color: #c7b8aa;
+  background-color: var(--color-secondary);
   text-align: center;
-  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.15);
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.15);
 }
 
-.card-ruban-variant-wide-btn {
-  display: block;
-  width: 100%;
-  border: none;
-  background: transparent;
-  color: #fff;
-  padding: 10px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.card-ruban-variant-wide-btn:hover {
-  background-color: #b9aa9e;
-}
-
-/* Structured offer button inside ribbon */
+/* Bouton structuré dans le ruban */
 .card-ruban-variant-wide-btn {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
   padding: 0.5rem 0.6rem;
-  background: linear-gradient(90deg, #e67e22 0%, #f7ca18 100%);
+  background: linear-gradient(90deg, #616161 0%, #9bc5c3 100%);
   color: #fff;
-  border-radius: 0;
+  border:none;
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+.card-ruban-variant-wide-btn:hover {
+  transform: scale(1.02);
 }
 .card-ruban-variant-wide-btn:focus {
-  outline: 3px solid rgba(0,0,0,0.12);
+  outline: 3px solid rgba(0, 0, 0, 0.12);
 }
 .card-ruban-variant-wide-btn .offer-block {
   display: flex;
@@ -417,12 +414,12 @@ hr {
   gap: 0.6rem;
 }
 .card-ruban-variant-wide-btn .offer-icon {
+  width: 44px;
+  height: 44px;
+  font-size: 1.4rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px; /* roughly two text lines height */
-  height: 44px; /* makes the icon area squared */
-  font-size: 1.4rem;
 }
 .card-ruban-variant-wide-btn .offer-text {
   display: flex;
@@ -443,87 +440,135 @@ hr {
 .card-ruban-variant-wide-btn .offer-separator {
   width: 1px;
   height: 46px;
-  background: rgba(0,0,0,0.12);
+  background: rgba(0, 0, 0, 0.12);
   margin: 0 8px;
-  flex-shrink: 0;
 }
 
-/* Make text and prices responsive */
+/* ==========================================================
+   ✉️ FORMULAIRE DE CONTACT (modernisé)
+   ========================================================== */
+#feedback-page {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+#form-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+#form-div {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(6px);
+  padding: 2rem;
+  width: 100%;
+  max-width: 480px;
+  border-radius: var(--radius-soft);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Champs du formulaire */
+.feedback-input {
+  color: var(--color-text);
+  font-size: 1rem;
+  font-weight: 500;
+  border: 2px solid transparent;
+  border-radius: 0.5rem;
+  background-color: #fbfbfb;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border var(--transition-fast);
+}
+.feedback-input:focus {
+  border: 2px solid var(--color-accent);
+  outline: none;
+  background-color: #fff;
+}
+
+/* Zone de texte */
+textarea {
+  resize: vertical;
+  height: 150px;
+}
+
+/* Bouton d’envoi */
+#button-blue {
+  width: 100%;
+  background-color: var(--color-accent);
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 1rem;
+  border: none;
+  border-radius: var(--radius-soft);
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+#button-blue:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================
+   📱 RESPONSIVE DESIGN
+   ========================================================== */
+
+/* Tablettes */
+@media (max-width: 992px) {
+  .search-fields {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobiles */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .carousel {
+    height: 50vh;
+  }
+  .search-box {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    border-radius: 0;
+    background: #fff;
+    color: var(--color-text);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 1rem;
+  }
+  .search-fields {
+    grid-template-columns: 1fr;
+  }
+  .guest-popup {
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Très petits écrans */
 @media (max-width: 576px) {
   .card-ruban-variant-wide-btn {
     flex-direction: column;
     align-items: center;
     gap: 0.4rem;
-    padding: 0.6rem 0.4rem;
   }
   .card-ruban-variant-wide-btn .offer-separator {
     display: none;
-  }
-  .card-ruban-variant-wide-btn .offer-block {
-    justify-content: center;
   }
   .card-ruban-variant-wide-btn .offer-icon {
     width: 38px;
     height: 38px;
     font-size: 1.2rem;
-  }
-}
-
-
-/*MISE EN VALEURS,ARGUMENTS*/
-
-
-/* ======================================= */
-/* === MEDIA QUERIES POUR LE RESPONSIVE === */
-/* ======================================= */
-
-/* For Tablets and below (e.g., iPad portrait) */
-@media (max-width: 992px) {
-  .search-fields {
-    grid-template-columns: repeat(2, 1fr); 
-  }
-}
-
-/* POUR TELEPHONE PORTABLE */
-@media (max-width: 768px) {
-  .header-content {
-    flex-direction: column; 
-    align-items: flex-start;
-  }
-  
-  .header-search {
-    width: 100%;
-  }
-
-  .carousel {
-    height: 50vh; 
-  }
-
-  /* --- SECTION RECHERCHE SUR PORTABLE --- */
-  .search-box {
-    position: relative; 
-    bottom: auto;
-    left: auto;
-    transform: none; 
-    width: 100%;
-    border-radius: 0;
-    background: #ffffff; 
-    color: #333;
-    padding: 1.5rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  }
-
-  .search-fields {
-    grid-template-columns: 1fr; 
-  }
-  
-  .offre {
-    padding-top: 1.5rem; 
-  }
-
-  .guest-popup {
-    width: 100%;
-    left: 50%;
-    transform: translateX(-50%);
   }
 }
