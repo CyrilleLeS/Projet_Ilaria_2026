@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiement - Étape 2 | Projet Ilaria</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <header class="main-header">
+        <div class="container py-2">
+            <a href="index.html" class="header-logo">
+                <img src="images/logo.png" alt="Logo" width="40">
+                <h1 class="h5 mb-0 text-white">Projet Ilaria - Réservation</h1>
+            </a>
+        </div>
+    </header>
+
+    <main class="container my-5 flex-grow-1">
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="d-flex justify-content-center align-items-center">
+                    <a href="payment1.html" class="badge bg-success text-decoration-none fs-5 rounded-pill px-4 py-2">✓ 1. Coordonnées</a>
+                    <div class="bg-primary mx-2" style="height: 2px; width: 50px;"></div>
+                    <div class="badge bg-primary fs-5 rounded-pill px-4 py-2">2. Paiement</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <h2 class="h4 text-primary fw-bold mb-4">Règlement sécurisé</h2>
+                
+                <form onsubmit="event.preventDefault(); alert('Félicitations ! Votre réservation fictive est confirmée. Redirection vers l\'accueil...'); window.location.href='index.html';" class="bg-white p-4 rounded shadow-sm border">
+                    
+                    <div class="mb-4">
+                        <label class="form-label fw-bold d-block">Type de carte</label>
+                        <div class="btn-group w-100" role="group">
+                            <input type="radio" class="btn-check" name="cardtype" id="visa" autocomplete="off" checked>
+                            <label class="btn btn-outline-secondary" for="visa">Visa</label>
+                          
+                            <input type="radio" class="btn-check" name="cardtype" id="mastercard" autocomplete="off">
+                            <label class="btn btn-outline-secondary" for="mastercard">Mastercard</label>
+                          
+                            <input type="radio" class="btn-check" name="cardtype" id="amex" autocomplete="off">
+                            <label class="btn btn-outline-secondary" for="amex">Amex</label>
+                        </div>
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <label for="cardName" class="form-label">Titulaire de la carte</label>
+                            <input type="text" class="form-control" id="cardName" placeholder="M JEAN DUPONT" required>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="cardNumber" class="form-label">Numéro de carte</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light">💳</span>
+                                <input type="text" class="form-control" id="cardNumber" placeholder="0000 0000 0000 0000" maxlength="19" required>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="expiry" class="form-label">Date d'expiration</label>
+                            <input type="text" class="form-control" id="expiry" placeholder="MM / AA" maxlength="5" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="cvv" class="form-label">Cryptogramme (CVV)</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="cvv" placeholder="123" maxlength="3" required>
+                                <span class="input-group-text bg-white text-muted" data-bs-toggle="tooltip" title="Les 3 derniers chiffres au dos">?</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-info mt-4 d-flex align-items-center" role="alert">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-lock-fill me-2" viewBox="0 0 16 16">
+                            <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
+                        </svg>
+                        <div class="small">
+                            Paiement sécurisé par SSL 256-bit. Aucune donnée réelle n'est enregistrée ici.
+                        </div>
+                    </div>
+
+                    <div class="mt-4 d-flex justify-content-between align-items-center">
+                        <a href="payment1.html" class="text-decoration-none text-muted">&larr; Retour</a>
+                        <button type="submit" class="btn btn-success btn-lg rounded-pill px-5 shadow-sm">
+                            Payer 1 250 €
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="card border-0 shadow-sm sticky-top opacity-75" style="top: 20px;">
+                    <div class="card-header bg-secondary text-white fw-bold">
+                        Votre Réservation
+                    </div>
+                    <div class="card-body bg-light">
+                        <h5 class="card-title fs-6 fw-bold text-muted">Hôtel Grand Palace</h5>
+                        <p class="small text-muted">Paris, France</p>
+                        <ul class="list-unstyled small mb-0">
+                            <li class="d-flex justify-content-between"><span>Du:</span> <span>12/06/26</span></li>
+                            <li class="d-flex justify-content-between"><span>Au:</span> <span>19/06/26</span></li>
+                            <li class="d-flex justify-content-between mt-2 pt-2 border-top"><span>Chambre:</span> <span>Deluxe</span></li>
+                        </ul>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                        <span class="small fw-bold">Total</span>
+                        <span class="h5 mb-0 text-primary fw-bold">1 250 €</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="card border-info mb-3 sticky-top" style="top: 20px;">
+                    <div class="card-body text-center">
+                        <div class="mb-2 text-info">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                                <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m.417 4.515a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5"/>
+                            </svg>
+                        </div>
+                        <h6 class="fw-bold">Un problème ?</h6>
+                        <p class="small text-muted mb-2">Notre support technique vous accompagne.</p>
+                        <a href="#" class="btn btn-outline-dark btn-sm w-100">Centre d'aide</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-light py-3 mt-auto text-center">
+        <p class="mb-0 small">© 2026 Projet Ilaria. Mode Démonstration.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Petit script pour activer les tooltips bootstrap (le "?" à côté du CVV)
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+          return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+</body>
+</html>

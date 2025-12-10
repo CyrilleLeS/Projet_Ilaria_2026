@@ -1,0 +1,225 @@
+/* ==========================================================
+   STYLE GLOBAL - PROJET ILARIA 2026
+   ========================================================== */
+
+:root {
+  --color-primary: #78c2ad;        /* Vert menthe (base Bootswatch) */
+  --color-primary-dark: #609b8a;   /* Version foncée */
+  --color-secondary: #f3969a;      /* Rose doux */
+  --color-bg: #e9e6e0;             /* Beige sable */
+  --color-text: #333;
+  --transition-fast: 0.3s ease;
+  --radius-soft: 1rem;
+}
+
+body {
+  background-color: var(--color-bg);
+  /* La police est gérée par Bootstrap (Montserrat) */
+}
+
+/* --- Accessibilité et Utilitaires --- */
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: white;
+  padding: 8px;
+  z-index: 10000;
+  transition: top 0.3s;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+.hover-lift {
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+/* --- En-tête (Header) --- */
+.main-header {
+  background-color: var(--color-primary);
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: #fff;
+}
+
+.header-logo img {
+  border-radius: 50%;
+  background: white;
+  padding: 2px;
+}
+
+/* --- Navigation --- */
+.navbar-nav .nav-link {
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+}
+.navbar-nav .nav-link.active {
+  color: var(--color-primary-dark) !important;
+  font-weight: 700;
+}
+
+/* --- Section Hero & Carrousel --- */
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 500px; /* Hauteur minimale */
+  overflow: hidden;
+}
+
+.carousel-container {
+  width: 100%;
+  height: 80vh; /* Hauteur adaptative */
+  max-height: 700px;
+  position: relative;
+}
+
+.carousel-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel-container img.active {
+  opacity: 1;
+}
+
+/* Contrôles du carrousel */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.3);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0 1rem;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-fast);
+}
+.nav-btn:hover {
+  background: rgba(0,0,0,0.6);
+}
+#left-btn { left: 20px; }
+#right-btn { right: 20px; }
+
+.dots-container {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.dot.active {
+  background-color: white;
+  transform: scale(1.2);
+}
+
+/* --- Module de Recherche --- */
+.search-box {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1000px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px); /* Effet verre dépoli moderne */
+  padding: 2rem;
+  border-radius: var(--radius-soft);
+  z-index: 20;
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* Popup Invités */
+.guest-selector {
+  position: relative;
+}
+#guests-summary {
+  background-color: white;
+  cursor: pointer;
+}
+.guest-popup {
+  position: absolute;
+  top: 105%;
+  left: 0;
+  width: 100%;
+  min-width: 250px;
+  z-index: 50;
+  display: none; /* Masqué par défaut */
+}
+.guest-popup.show {
+  display: block;
+}
+
+/* --- Footer --- */
+.hover-white:hover {
+  color: white !important;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .carousel-container {
+    height: 50vh;
+  }
+  .search-box {
+    position: relative;
+    transform: none;
+    left: auto;
+    bottom: auto;
+    margin: -50px auto 0; /* Chevauchement léger */
+    width: 95%;
+    background: white; /* Fond opaque sur mobile pour lisibilité */
+    color: var(--color-text);
+  }
+  .search-box label {
+    color: var(--color-text) !important;
+    text-shadow: none !important;
+  }
+}

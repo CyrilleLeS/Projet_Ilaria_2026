@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiement - Étape 1 | Projet Ilaria</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <header class="main-header">
+        <div class="container py-2">
+            <a href="index.html" class="header-logo">
+                <img src="images/logo.png" alt="Logo" width="40">
+                <h1 class="h5 mb-0 text-white">Projet Ilaria - Réservation</h1>
+            </a>
+        </div>
+    </header>
+
+    <main class="container my-5 flex-grow-1">
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="d-flex justify-content-center align-items-center">
+                    <div class="badge bg-primary fs-5 rounded-pill px-4 py-2">1. Coordonnées</div>
+                    <div class="bg-secondary mx-2" style="height: 2px; width: 50px;"></div>
+                    <div class="badge bg-light text-muted fs-5 rounded-pill px-4 py-2 border">2. Paiement</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <h2 class="h4 text-primary fw-bold mb-4">Qui voyage ?</h2>
+                <form action="payment2.html" class="bg-white p-4 rounded shadow-sm border">
+                    
+                    <div class="row g-3">
+                        <div class="col-md-12">
+                            <label class="form-label fw-bold">Civilité</label>
+                            <div class="d-flex gap-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="civility" id="mr" checked>
+                                    <label class="form-check-label" for="mr">M.</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="civility" id="mme">
+                                    <label class="form-check-label" for="mme">Mme</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="prenom" class="form-label">Prénom *</label>
+                            <input type="text" class="form-control" id="prenom" placeholder="Jean" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="nom" class="form-label">Nom *</label>
+                            <input type="text" class="form-control" id="nom" placeholder="Dupont" required>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="email" class="form-label">Email de confirmation *</label>
+                            <input type="email" class="form-control" id="email" placeholder="jean.dupont@email.com" required>
+                            <div class="form-text">Vos billets seront envoyés à cette adresse.</div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="phone" class="form-label">Téléphone mobile *</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="+33 6 12 34 56 78" required>
+                        </div>
+
+                        <div class="col-12 mt-4">
+                            <h3 class="h6 fw-bold">Adresse de facturation</h3>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="address" class="form-label">Adresse</label>
+                            <input type="text" class="form-control" id="address" placeholder="10 rue de la Paix">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="zip" class="form-label">Code Postal</label>
+                            <input type="text" class="form-control" id="zip" placeholder="75000">
+                        </div>
+                        <div class="col-md-8">
+                            <label for="city" class="form-label">Ville</label>
+                            <input type="text" class="form-control" id="city" placeholder="Paris">
+                        </div>
+                    </div>
+
+                    <div class="mt-4 pt-3 border-top d-flex justify-content-end">
+                        <button type="submit" class="btn btn-primary btn-lg rounded-pill px-5 shadow-sm">
+                            Continuer vers le paiement &rarr;
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="card border-0 shadow-sm sticky-top" style="top: 20px; z-index: 1;">
+                    <div class="card-header bg-secondary text-white fw-bold">
+                        Votre Réservation
+                    </div>
+                    <img src="images/hotel1.jpg" class="card-img-top object-fit-cover" height="150" alt="Hôtel">
+                    <div class="card-body">
+                        <h5 class="card-title fs-6 fw-bold">Hôtel Grand Palace - Paris</h5>
+                        <p class="small text-muted mb-2">Chambre Deluxe, Vue Mer</p>
+                        <hr>
+                        <div class="d-flex justify-content-between small mb-1">
+                            <span>Arrivée :</span>
+                            <strong>12 Juin 2026</strong>
+                        </div>
+                        <div class="d-flex justify-content-between small mb-3">
+                            <span>Départ :</span>
+                            <strong>19 Juin 2026</strong>
+                        </div>
+                        <div class="alert alert-light border small mb-0">
+                            2 Adultes, 0 Enfant<br>
+                            7 Nuits
+                        </div>
+                    </div>
+                    <div class="card-footer bg-light d-flex justify-content-between align-items-center">
+                        <span class="small text-muted">Total TTC</span>
+                        <span class="h5 mb-0 text-primary fw-bold">1 250 €</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="card border-info mb-3 sticky-top" style="top: 20px; z-index: 1;">
+                    <div class="card-body text-center">
+                        <div class="mb-3 text-info">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-headset" viewBox="0 0 16 16">
+                                <path d="M8 1a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a6 6 0 1 1 12 0v6a2.5 2.5 0 0 1-2.5 2.5H9.366a1 1 0 0 1-.866.5h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 .866.5H11.5A1.5 1.5 0 0 0 13 12h-1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h1V6a5 5 0 0 0-5-5"/>
+                            </svg>
+                        </div>
+                        <h5 class="card-title h6 fw-bold">Besoin d'aide ?</h5>
+                        <p class="card-text small text-muted">
+                            Nos conseillers sont disponibles 24/7 pour finaliser votre réservation.
+                        </p>
+                        <a href="tel:+33123456789" class="btn btn-outline-info btn-sm w-100 mb-2">
+                            Appeler le 01 23 45 67 89
+                        </a>
+                        <a href="#" class="text-decoration-none small text-muted">Chatter avec un expert</a>
+                    </div>
+                </div>
+                
+                <div class="card bg-light border-0">
+                    <div class="card-body small">
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2">✅ Meilleur prix garanti</li>
+                            <li class="mb-2">🔒 Paiement 100% sécurisé</li>
+                            <li>❌ Annulation gratuite</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-light py-3 mt-auto text-center">
+        <p class="mb-0 small">© 2026 Projet Ilaria. Mode Démonstration.</p>
+    </footer>
+
+</body>
+</html>

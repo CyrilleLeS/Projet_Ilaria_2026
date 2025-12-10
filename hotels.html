@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hôtels</title>
+    <link rel="stylesheet" href="/frontend/public/reset.css">
+    <link rel="stylesheet" href="/frontend/public/bootstrap.css">
+    <link rel="stylesheet" href="/frontend/src/pages/styles.css">
+</head>
+<body>
+    <a href="#maincontent" class="skip-link">Aller au contenu</a>
+
+    <!--HEADER-->
+
+    <header class="main-header">
+        <div class="header-content">
+            <a href="#" class="header-logo">
+                <img src="/frontend/public/images/logo.png" alt="Logo de l'entreprise">
+                <h2>Réservez Votre Hôtel !</h2>
+            </a>
+            <form class="header-search d-flex">
+                <input class="form-control me-sm-2" type="search" placeholder="Trouvez votre bonheur">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Recherche</button>
+            </form>
+        </div>
+    </header>
+
+    <!--NAVBAR-->
+
+    <nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Menu</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+            aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMain">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Hôtel <span class="visually-hidden">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Vol</a> 
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Vol + Hôtel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Demi-pension</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Croisières</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Location voiture</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Locations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Promo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/frontend/src/pages/contact.html">Contact</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mon Espace</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Mon Compte</a>
+                    <a class="dropdown-item" href="#">Réservations</a>
+                    <a class="dropdown-item" href="#">Paramètres</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Déconnexion</a>
+                  </div>
+                </li>
+                </ul>
+        </div>
+    </div>
+</nav>
+
+    <!--CAROUSEL fait en javascript, pour les slides, les boutons et la durée d'intervalle des différentes images-->
+
+    <!--FOOTER-->
+
+<footer class="container px-4 " style="padding: 0px;">
+    <div class="row">
+        <div class="col-6 col-md-2 mb-3">
+            <h5>Pages</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Accueil</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Hôtel</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Vol</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Vol+Hôtel</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Contact</a></li>
+            </ul>
+        </div>
+        <div class="col-6 col-md-2 mb-3">
+            <h5>Assistance clientèle</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Comment faire une réservation</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Conseils sur la réservation</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Options de paiements</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">A propos</a></li>
+            </ul>
+        </div>
+        <div class="col-6 col-md-2 mb-3">
+            <h5>Nos réseaux sociaux</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary" aria-label="Facebook"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary" aria-label="Instagram"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary" aria-label="LinkedIn"><svg class="bi" width="24" height="24"><use xlink:href="#linkedin"></use></svg></a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary" aria-label="X (Twitter)"><svg class="bi" width="24" height="24"><use xlink:href="#square-x-twitter"></use></svg></a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary" aria-label="YouTube"><svg class="bi" width="24" height="24"><use xlink:href="#youtube"></use></svg></a></li>
+            </ul>
+        </div>
+        <div class="col-md-5 offset-md-1 mb-3">
+            <form>
+                <h5>Ne manquez pas nos offres exclusives</h5>
+                <p>Revue mensuelle des affaires à suivre !</p>
+                <div class="d-flex flex-column flex-sm-row w-100 gap-2"> <label for="newsletter1"
+                        class="visually-hidden">Email address</label> <input id="newsletter1" type="email"
+                        class="form-control" placeholder="Adresse mail"> <button class="btn btn-primary"
+                        type="button">S'inscrire</button> </div>
+            </form>
+        </div>
+    </div>
+    <div class="d-flex flex-column flex-sm-row justify-content-between">
+        <p>© 2025 Company, Inc. Tous droits reservés.</p>
+        <ul class="list-unstyled d-flex">
+            <li class="ms-3"><a class="link-body-emphasis" href="#" aria-label="Instagram"><svg class="bi" width="24"
+                        height="24">
+                        <use xlink:href="#instagram"></use>
+                    </svg></a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#" aria-label="Facebook"><svg class="bi" width="24"
+                        height="24" aria-hidden="true">
+                        <use xlink:href="#facebook"></use>
+                    </svg></a></li>
+        </ul>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script src="/frontend/public/script.js"></script>
+</body>
+</html>
