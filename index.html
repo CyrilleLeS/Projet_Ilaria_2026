@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Réservez votre hôtel, vol ou voiture au meilleur prix avec Projet Ilaria.">
+    <meta name="description" content="Réservez votre hôtel de luxe au meilleur prix avec Projet Ilaria.">
     <title>Accueil | Projet Ilaria 2026</title>
     
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -16,18 +16,17 @@
 
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
         <symbol id="icon-hotel" viewBox="0 0 24 24"><path d="M3 11v7a1 1 0 0 0 1 1h2v-4h10v4h2a1 1 0 0 0 1-1v-7H3zm2-5h2v2H5V6zm4 0h6v2H9V6z" fill="currentColor"/></symbol>
-        <symbol id="icon-plane" viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-1v3l-2 1v1l4-1 4 1v-1l-2-1v-3l8 1z" fill="currentColor"/></symbol>
-        </svg>
+    </svg>
 
     <header class="main-header">
         <div class="header-content container">
             <a href="index.html" class="header-logo">
                 <img src="images/logo.png" alt="Logo Projet Ilaria" width="50" height="50">
-                <h1 class="h4 mb-0">Réservez Votre Rêve</h1>
+                <h1 class="h4 mb-0">Ilaria Hôtels</h1>
             </a>
             <form class="header-search d-flex" role="search">
                 <label for="header-search-input" class="visually-hidden">Rechercher</label>
-                <input id="header-search-input" class="form-control me-2" type="search" placeholder="Rechercher une destination...">
+                <input id="header-search-input" class="form-control me-2" type="search" placeholder="Rechercher un hôtel...">
                 <button class="btn btn-light" type="submit">Go</button>
             </form>
         </div>
@@ -42,10 +41,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarMain">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" href="#" aria-current="page">Hôtel</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Vol</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Vol + Hôtel</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Locations</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="hotels.html">Nos Hôtels</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Offres Spéciales</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
@@ -83,31 +81,25 @@
             </div>
 
             <div class="search-box container">
-                <form class="search-form" action="#" method="GET">
-                    <div class="row g-3 search-fields">
-                        <div class="col-md-3 search-field">
-                            <label for="service" class="form-label text-white text-shadow">Quoi ?</label>
-                            <select id="service" name="service" class="form-select">
-                                <option value="hotel">Hôtel</option>
-                                <option value="avion">Avion</option>
-                                <option value="vol-hotel">Avion + Hôtel</option>
-                            </select>
+                <form class="search-form" action="hotels.html" method="GET">
+                    <div class="row g-3 search-fields align-items-end">
+                        <div class="col-md-4 search-field">
+                            <label for="destination" class="form-label text-white text-shadow">Destination</label>
+                            <input type="text" id="destination" name="destination" class="form-control form-control-lg" placeholder="Ville, nom de l'hôtel...">
                         </div>
-                        <div class="col-md-3 search-field">
-                            <label for="destination" class="form-label text-white text-shadow">Où ?</label>
-                            <input type="text" id="destination" name="destination" class="form-control" placeholder="Ville, aéroport...">
-                        </div>
-                        <div class="col-md-3 search-field">
-                            <label for="start-date" class="form-label text-white text-shadow">Quand ?</label>
+                        
+                        <div class="col-md-4 search-field">
+                            <label for="start-date" class="form-label text-white text-shadow">Dates de séjour</label>
                             <div class="input-group">
-                                <input type="date" id="start-date" name="start-date" class="form-control" aria-label="Date de départ">
-                                <input type="date" id="end-date" name="end-date" class="form-control" aria-label="Date de retour">
+                                <input type="date" id="start-date" name="start-date" class="form-control form-control-lg" aria-label="Date d'arrivée">
+                                <input type="date" id="end-date" name="end-date" class="form-control form-control-lg" aria-label="Date de départ">
                             </div>
                         </div>
-                        <div class="col-md-3 search-field position-relative">
-                            <label for="guests-summary" class="form-label text-white text-shadow">Qui ?</label>
+
+                        <div class="col-md-4 search-field position-relative">
+                            <label for="guests-summary" class="form-label text-white text-shadow">Voyageurs</label>
                             <div class="guest-selector">
-                                <input type="text" id="guests-summary" class="form-control" readonly value="2 adultes, 0 enfant" aria-haspopup="true" aria-expanded="false">
+                                <input type="text" id="guests-summary" class="form-control form-control-lg" readonly value="2 adultes, 0 enfant" aria-haspopup="true" aria-expanded="false">
                                 <div class="guest-popup shadow rounded p-3 bg-white" id="guest-popup" aria-hidden="true">
                                     <div class="guest-row d-flex justify-content-between align-items-center mb-2">
                                         <span>Adultes</span>
@@ -129,9 +121,10 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="mt-4 text-center">
-                        <button type="submit" class="btn btn-primary btn-lg px-5 shadow">Rechercher</button>
+                        
+                        <div class="col-12 text-center mt-4">
+                            <button type="submit" class="btn btn-primary btn-lg px-5 shadow rounded-pill">Rechercher un hôtel</button>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -140,48 +133,48 @@
         <section class="container py-5">
             <div class="text-center mb-5">
                 <h2 class="text-primary fw-bold">Nos Offres Exclusives</h2>
-                <p class="text-muted">Profitez de réductions incroyables pour vos prochaines vacances.</p>
+                <p class="text-muted">Profitez de réductions incroyables sur nos hôtels partenaires.</p>
                 <hr class="w-25 mx-auto text-primary">
             </div>
             
             <div class="row g-4">
                 <div class="col-md-6 col-lg-3">
                     <div class="card h-100 shadow-sm border-0 hover-lift">
-                        <img src="images/escapade.jpg" class="card-img-top object-fit-cover" height="200" alt="Femme jouant dans la neige">
+                        <img src="images/escapade.jpg" class="card-img-top object-fit-cover" height="200" alt="Neige">
                         <div class="card-body">
-                            <h3 class="h5 card-title">Escapade Hivernale</h3>
-                            <p class="card-text text-muted">Jusqu'à -30% sur les séjours à la montagne.</p>
-                            <a href="#" class="btn btn-outline-primary rounded-pill w-100 mt-2">Profiter</a>
+                            <h3 class="h5 card-title">Hôtels à la Montagne</h3>
+                            <p class="card-text text-muted">Jusqu'à -30% sur les chalets de luxe.</p>
+                            <a href="hotels.html" class="btn btn-outline-primary rounded-pill w-100 mt-2">Découvrir</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <div class="card h-100 shadow-sm border-0 hover-lift">
-                        <img src="images/nouvelan.png" class="card-img-top object-fit-cover" height="200" alt="Feux d'artifice en ville">
+                        <img src="images/nouvelan.png" class="card-img-top object-fit-cover" height="200" alt="Fête">
                         <div class="card-body">
-                            <h3 class="h5 card-title">Spécial Nouvel An</h3>
-                            <p class="card-text text-muted">Commencez 2026 dans la ville de vos rêves.</p>
-                            <a href="#" class="btn btn-outline-primary rounded-pill w-100 mt-2">Profiter</a>
+                            <h3 class="h5 card-title">Spécial Réveillon</h3>
+                            <p class="card-text text-muted">Suites avec vue pour le passage à 2026.</p>
+                            <a href="hotels.html" class="btn btn-outline-primary rounded-pill w-100 mt-2">Découvrir</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <div class="card h-100 shadow-sm border-0 hover-lift">
-                        <img src="images/alpes.jpg" class="card-img-top object-fit-cover" height="200" alt="Sommets enneigés des Alpes">
+                        <img src="images/hotel1.jpg" class="card-img-top object-fit-cover" height="200" alt="Piscine">
                         <div class="card-body">
-                            <h3 class="h5 card-title">Ski dans les Alpes</h3>
-                            <p class="card-text text-muted">Forfaits tout compris : hébergement + skipass.</p>
-                            <a href="#" class="btn btn-outline-primary rounded-pill w-100 mt-2">Profiter</a>
+                            <h3 class="h5 card-title">Détente Spa & Bien-être</h3>
+                            <p class="card-text text-muted">Week-end thalasso tout compris.</p>
+                            <a href="hotels.html" class="btn btn-outline-primary rounded-pill w-100 mt-2">Découvrir</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <div class="card h-100 shadow-sm border-0 hover-lift">
-                        <img src="images/thailand.jpg" class="card-img-top object-fit-cover" height="200" alt="Temple en Thaïlande au crépuscule">
+                        <img src="images/thailand.jpg" class="card-img-top object-fit-cover" height="200" alt="Thaïlande">
                         <div class="card-body">
-                            <h3 class="h5 card-title">Soleil de Thaïlande</h3>
-                            <p class="card-text text-muted">Découvrez l'Asie à prix réduits.</p>
-                            <a href="#" class="btn btn-outline-primary rounded-pill w-100 mt-2">Profiter</a>
+                            <h3 class="h5 card-title">Hôtels Exotiques</h3>
+                            <p class="card-text text-muted">Découvrez l'Asie dans nos resorts 5 étoiles.</p>
+                            <a href="hotels.html" class="btn btn-outline-primary rounded-pill w-100 mt-2">Découvrir</a>
                         </div>
                     </div>
                 </div>
@@ -191,8 +184,8 @@
         <section class="bg-light py-5">
             <div class="container">
                 <div class="text-center mb-5">
-                    <h2 class="fw-bold">Top Destinations</h2>
-                    <p class="text-muted">Les lieux préférés de nos voyageurs cette année.</p>
+                    <h2 class="fw-bold">Destinations Phares</h2>
+                    <p class="text-muted">Les hôtels les mieux notés par nos clients.</p>
                 </div>
 
                 <div class="row g-4 justify-content-center">
@@ -200,29 +193,17 @@
                         <div class="card card-destination h-100 border-0 shadow">
                             <div class="position-relative">
                                 <img src="images/paris.jpg" class="card-img-top" alt="Paris" style="height: 200px; object-fit: cover;">
-                                <span class="badge bg-primary position-absolute top-0 end-0 m-2">Populaire</span>
+                                <span class="badge bg-primary position-absolute top-0 end-0 m-2">Top Vente</span>
                             </div>
                             <div class="card-body text-center">
-                                <h3 class="h4 card-title fw-bold">Paris</h3>
-                                <p class="small text-muted mb-3">France</p>
-                                <div class="d-flex justify-content-between align-items-center bg-light p-2 rounded">
-                                    <div class="d-flex align-items-center gap-2">
-                                        <svg width="20" height="20" class="text-primary"><use xlink:href="#icon-hotel"></use></svg>
-                                        <div class="text-start lh-1">
-                                            <span class="d-block small text-muted">Hôtel</span>
-                                            <span class="fw-bold price-hotel" data-city="Paris">70€</span>
-                                        </div>
-                                    </div>
-                                    <div class="vr"></div>
-                                    <div class="d-flex align-items-center gap-2">
-                                        <svg width="20" height="20" class="text-secondary"><use xlink:href="#icon-plane"></use></svg>
-                                        <div class="text-start lh-1">
-                                            <span class="d-block small text-muted">Vol</span>
-                                            <span class="fw-bold price-plane" data-city="Paris">150€</span>
-                                        </div>
-                                    </div>
+                                <h3 class="h4 card-title fw-bold">Grand Palace Paris</h3>
+                                <p class="small text-muted mb-3">⭐⭐⭐⭐⭐</p>
+                                <div class="bg-white p-2 rounded border mb-3">
+                                    <span class="d-block small text-muted">À partir de</span>
+                                    <span class="h4 fw-bold text-primary">170€</span>
+                                    <span class="small text-muted">/ nuit</span>
                                 </div>
-                                <a href="#" class="btn btn-primary w-100 mt-3 rounded-pill">Réserver</a>
+                                <a href="hotels.html" class="btn btn-primary w-100 rounded-pill">Voir l'hôtel</a>
                             </div>
                         </div>
                     </div>
@@ -233,26 +214,14 @@
                                 <img src="images/petersbourg.jpg" class="card-img-top" alt="Saint Petersbourg" style="height: 200px; object-fit: cover;">
                             </div>
                             <div class="card-body text-center">
-                                <h3 class="h4 card-title fw-bold">St Petersburg</h3>
-                                <p class="small text-muted mb-3">Russie</p>
-                                <div class="d-flex justify-content-between align-items-center bg-light p-2 rounded">
-                                    <div class="d-flex align-items-center gap-2">
-                                        <svg width="20" height="20" class="text-primary"><use xlink:href="#icon-hotel"></use></svg>
-                                        <div class="text-start lh-1">
-                                            <span class="d-block small text-muted">Hôtel</span>
-                                            <span class="fw-bold price-hotel" data-city="St Petersburg">65€</span>
-                                        </div>
-                                    </div>
-                                    <div class="vr"></div>
-                                    <div class="d-flex align-items-center gap-2">
-                                        <svg width="20" height="20" class="text-secondary"><use xlink:href="#icon-plane"></use></svg>
-                                        <div class="text-start lh-1">
-                                            <span class="d-block small text-muted">Vol</span>
-                                            <span class="fw-bold price-plane" data-city="St Petersburg">140€</span>
-                                        </div>
-                                    </div>
+                                <h3 class="h4 card-title fw-bold">Hotel Tsar Imperial</h3>
+                                <p class="small text-muted mb-3">⭐⭐⭐⭐</p>
+                                <div class="bg-white p-2 rounded border mb-3">
+                                    <span class="d-block small text-muted">À partir de</span>
+                                    <span class="h4 fw-bold text-primary">95€</span>
+                                    <span class="small text-muted">/ nuit</span>
                                 </div>
-                                <a href="#" class="btn btn-primary w-100 mt-3 rounded-pill">Réserver</a>
+                                <a href="hotels.html" class="btn btn-primary w-100 rounded-pill">Voir l'hôtel</a>
                             </div>
                         </div>
                     </div>
@@ -263,26 +232,14 @@
                                 <img src="images/prague.jpg" class="card-img-top" alt="Prague" style="height: 200px; object-fit: cover;">
                             </div>
                             <div class="card-body text-center">
-                                <h3 class="h4 card-title fw-bold">Prague</h3>
-                                <p class="small text-muted mb-3">République Tchèque</p>
-                                <div class="d-flex justify-content-between align-items-center bg-light p-2 rounded">
-                                    <div class="d-flex align-items-center gap-2">
-                                        <svg width="20" height="20" class="text-primary"><use xlink:href="#icon-hotel"></use></svg>
-                                        <div class="text-start lh-1">
-                                            <span class="d-block small text-muted">Hôtel</span>
-                                            <span class="fw-bold price-hotel" data-city="Prague">55€</span>
-                                        </div>
-                                    </div>
-                                    <div class="vr"></div>
-                                    <div class="d-flex align-items-center gap-2">
-                                        <svg width="20" height="20" class="text-secondary"><use xlink:href="#icon-plane"></use></svg>
-                                        <div class="text-start lh-1">
-                                            <span class="d-block small text-muted">Vol</span>
-                                            <span class="fw-bold price-plane" data-city="Prague">120€</span>
-                                        </div>
-                                    </div>
+                                <h3 class="h4 card-title fw-bold">Bohemia Resort</h3>
+                                <p class="small text-muted mb-3">⭐⭐⭐⭐</p>
+                                <div class="bg-white p-2 rounded border mb-3">
+                                    <span class="d-block small text-muted">À partir de</span>
+                                    <span class="h4 fw-bold text-primary">85€</span>
+                                    <span class="small text-muted">/ nuit</span>
                                 </div>
-                                <a href="#" class="btn btn-primary w-100 mt-3 rounded-pill">Réserver</a>
+                                <a href="hotels.html" class="btn btn-primary w-100 rounded-pill">Voir l'hôtel</a>
                             </div>
                         </div>
                     </div>
@@ -294,33 +251,32 @@
     <footer class="bg-dark text-light py-5 mt-auto">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 mb-4">
+                <div class="col-lg-4 mb-4">
                     <a href="#" class="d-flex align-items-center mb-3 link-light text-decoration-none">
                         <img src="images/logo.png" alt="" width="40" height="40" class="me-2 bg-light rounded-circle">
-                        <span class="fs-5 fw-bold">Projet Ilaria</span>
+                        <span class="fs-5 fw-bold">Ilaria Hôtels</span>
                     </a>
-                    <p class="text-secondary">Votre partenaire de confiance pour des voyages inoubliables depuis 2026.</p>
+                    <p class="text-secondary">Spécialiste de la réservation hôtelière haut de gamme depuis 2026. Trouvez le séjour parfait.</p>
                 </div>
                 <div class="col-6 col-lg-2 mb-4">
-                    <h5 class="text-white mb-3">Navigation</h5>
+                    <h5 class="text-white mb-3">Plan du site</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none hover-white">Accueil</a></li>
-                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none hover-white">Hôtels</a></li>
-                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none hover-white">Vols</a></li>
+                        <li class="mb-2"><a href="index.html" class="text-secondary text-decoration-none hover-white">Accueil</a></li>
+                        <li class="mb-2"><a href="hotels.html" class="text-secondary text-decoration-none hover-white">Nos Hôtels</a></li>
                         <li class="mb-2"><a href="contact.html" class="text-secondary text-decoration-none hover-white">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-lg-2 mb-4">
-                    <h5 class="text-white mb-3">Aide</h5>
+                    <h5 class="text-white mb-3">Légal</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none hover-white">FAQ</a></li>
-                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none hover-white">Support</a></li>
                         <li class="mb-2"><a href="#" class="text-secondary text-decoration-none hover-white">CGV</a></li>
+                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none hover-white">Confidentialité</a></li>
+                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none hover-white">Mentions légales</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4 mb-4">
                     <h5 class="text-white mb-3">Newsletter</h5>
-                    <p class="text-secondary">Recevez nos meilleures offres.</p>
+                    <p class="text-secondary">Recevez nos codes promo exclusifs.</p>
                     <div class="input-group">
                         <input type="email" class="form-control" placeholder="Votre email" aria-label="Email">
                         <button class="btn btn-primary" type="button">S'abonner</button>

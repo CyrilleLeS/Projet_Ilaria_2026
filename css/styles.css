@@ -223,3 +223,39 @@ body {
     text-shadow: none !important;
   }
 }
+
+/* AJOUTS POUR LA PAGE HOTELS.HTML */
+
+/* Style des onglets de détails */
+.nav-tabs .nav-link {
+    color: var(--color-text);
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-weight: 600;
+}
+.nav-tabs .nav-link:hover {
+    border-color: rgba(0,0,0,0.1);
+    color: var(--color-primary);
+}
+.nav-tabs .nav-link.active {
+    color: var(--color-primary);
+    border-bottom: 3px solid var(--color-primary);
+    background: transparent;
+}
+
+/* Sidebar de réservation sticky */
+.card-header.bg-primary {
+    background-color: var(--color-primary) !important;
+}
+
+/* Amélioration visuelle des listes d'équipements */
+.list-group-item {
+    border-left: none;
+    border-right: none;
+}
+
+/* Badge de note */
+.badge.bg-success {
+    background-color: var(--color-primary-dark) !important;
+}
+
